@@ -39,7 +39,8 @@ N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
 필요하다면 html의 img태그를 이용하자
 [인용구] &amp;gt;인용구
 인용구
-[코드블록] ``` int main() {</description>
+[코드블록] ```
+int main()</description>
     </item>
     
     <item>
