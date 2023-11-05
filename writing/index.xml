@@ -22,7 +22,8 @@
 다만 위처럼 마크다운 형식으로 이미지 삽입시 크기 조절이 안됨
 필요하다면 html의 img태그를 이용하자
 [인용구] &amp;gt;인용구
-인용구</description>
+인용구
+[코드블록] ``` int main() {</description>
     </item>
     
     <item>
