@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>writing on BumSoft</title>
+    <link>https://bumsoft.github.io/writing/</link>
+    <description>Recent content in writing on BumSoft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown 문법</title>
+      <link>https://bumsoft.github.io/writing/second/</link>
+      <pubDate>Sat, 04 Nov 2023 19:00:00 +0900</pubDate>
+      
+      <guid>https://bumsoft.github.io/writing/second/</guid>
+      <description>마크다운 작성법에 대해 정리한 글입니다.
+(시간 날 때마다 계속 추가 예정)
+[제목] #h1 ##h2 ###h3 ####h4 #####h5 ######h6 [개행] 개행을 하려면 문장의 끝에 스페이스 두개 해줘야함
+개행을 하려면 문장의 끝에 스페이스 두개
+해줘야함
+[이미지삽입] ![screensh](이미지경로.png) 괄호안에 이미지의 주소를 넣어도 돼서 보통 비공개블로그 같은 곳에 이미지만 올려두고 그 주소를 사용하는경우도 많음
+다만 위처럼 마크다운 형식으로 이미지 삽입시 크기 조절이 안됨
+필요하다면 html의 img태그를 이용하자</description>
+    </item>
+    
+    <item>
+      <title>.sh로 배포 쉽게하기</title>
+      <link>https://bumsoft.github.io/writing/first/</link>
+      <pubDate>Tue, 31 Oct 2023 23:13:41 +0900</pubDate>
+      
+      <guid>https://bumsoft.github.io/writing/first/</guid>
+      <description>sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
+#!/bin/bash
+echo -e &amp;ldquo;\033[0;32mDeploying updates to GitHub&amp;hellip;\033[0m&amp;rdquo;
+# Build the project.
+# hugo -t &amp;lt;여러분의 테마&amp;gt;
+hugo -t 테마이름
+# Go To Public folder, sub module commit
+cd public
+# Add changes to git.
+git add .
+# Commit changes.
+msg=&amp;ldquo;rebuilding site date&amp;rdquo;
+if [ $# -eq 1 ]
+then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;ldquo;$msg&amp;rdquo;
+# Push source and build repos.</description>
+    </item>
+    
+  </channel>
+</rss>

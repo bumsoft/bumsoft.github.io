@@ -1,0 +1,454 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>.sh로 배포 쉽게하기 - BumSoft</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
+#!/bin/bash
+echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
+# Build the project.
+# hugo -t &lt;여러분의 테마&gt;
+hugo -t 테마이름
+# Go To Public folder, sub module commit
+cd public
+# Add changes to git.
+git add .
+# Commit changes.
+msg=&ldquo;rebuilding site date&rdquo;
+if [ $# -eq 1 ]
+then msg=&quot;$1&quot;
+fi
+git commit -m &ldquo;$msg&rdquo;
+# Push source and build repos." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumsoft.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumsoft.github.io/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumsoft.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumsoft.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumsoft.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumsoft.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumsoft.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content=".sh로 배포 쉽게하기">
+<meta itemprop="description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
+#!/bin/bash
+echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
+# Build the project.
+# hugo -t &lt;여러분의 테마&gt;
+hugo -t 테마이름
+# Go To Public folder, sub module commit
+cd public
+# Add changes to git.
+git add .
+# Commit changes.
+msg=&ldquo;rebuilding site date&rdquo;
+if [ $# -eq 1 ]
+then msg=&quot;$1&quot;
+fi
+git commit -m &ldquo;$msg&rdquo;
+# Push source and build repos."><meta itemprop="datePublished" content="2023-10-31T23:13:41+09:00" />
+<meta itemprop="dateModified" content="2023-10-31T23:13:41+09:00" />
+<meta itemprop="wordCount" content="134">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content=".sh로 배포 쉽게하기" />
+<meta property="og:description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
+#!/bin/bash
+echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
+# Build the project.
+# hugo -t &lt;여러분의 테마&gt;
+hugo -t 테마이름
+# Go To Public folder, sub module commit
+cd public
+# Add changes to git.
+git add .
+# Commit changes.
+msg=&ldquo;rebuilding site date&rdquo;
+if [ $# -eq 1 ]
+then msg=&quot;$1&quot;
+fi
+git commit -m &ldquo;$msg&rdquo;
+# Push source and build repos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumsoft.github.io/writing/first/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2023-10-31T23:13:41+09:00" />
+<meta property="article:modified_time" content="2023-10-31T23:13:41+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=".sh로 배포 쉽게하기"/>
+<meta name="twitter:description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
+#!/bin/bash
+echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
+# Build the project.
+# hugo -t &lt;여러분의 테마&gt;
+hugo -t 테마이름
+# Go To Public folder, sub module commit
+cd public
+# Add changes to git.
+git add .
+# Commit changes.
+msg=&ldquo;rebuilding site date&rdquo;
+if [ $# -eq 1 ]
+then msg=&quot;$1&quot;
+fi
+git commit -m &ldquo;$msg&rdquo;
+# Push source and build repos."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumsoft.github.io/writing/first/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumsoft.github.io"
+      >BumSoft</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writings</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">.sh로 배포 쉽게하기</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 31, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h3 id="sh파일로-쉽게-배포하기">sh파일로 쉽게 배포하기</h3>
+<p>c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. <br>
+<img src="/b1.png" alt="screensh"></p>
+<p>======================deploy.sh========================<br>
+#!/bin/bash<br>
+echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;<br>
+# Build the project.<br>
+# hugo -t &lt;여러분의 테마&gt;<br>
+hugo -t 테마이름<br>
+# Go To Public folder, sub module commit<br>
+cd public<br>
+# Add changes to git.<br>
+git add .<br>
+# Commit changes.<br>
+msg=&ldquo;rebuilding site <code>date</code>&rdquo;<br>
+if [ $# -eq 1 ]<br>
+then msg=&quot;$1&quot;<br>
+fi<br>
+git commit -m &ldquo;$msg&rdquo;<br>
+# Push source and build repos.<br>
+git push origin main<br>
+# Come Back up to the Project Root<br>
+cd ..<br>
+# blog 저장소 Commit &amp; Push<br>
+git add .<br>
+msg=&ldquo;rebuilding site <code>date</code>&rdquo;<br>
+if [ $# -eq 1 ]<br>
+then msg=&quot;$1&quot;<br>
+fi<br>
+git commit -m &ldquo;$msg&rdquo;<br>
+git push origin main</p>
+<p>=======================================================<br>
+작성 후 cmd로<br>
+실행권한부여 : $ chmod 777 deploy.sh<br>
+실행    : $ ./deploy.sh 해주면 알아서 git commit / push해줌!</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumsoft.github.io/writing/second/"
+      ><span class="mr-1.5">←</span><span>Markdown 문법</span></a
+    >
+    
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://bumsoft.github.io">BumSoft</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
