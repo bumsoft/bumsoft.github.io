@@ -25,10 +25,10 @@ N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
     
     <item>
       <title>Markdown 문법</title>
-      <link>https://bumsoft.github.io/writing/second/</link>
+      <link>https://bumsoft.github.io/writing/markdown/</link>
       <pubDate>Sat, 04 Nov 2023 19:00:00 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/second/</guid>
+      <guid>https://bumsoft.github.io/writing/markdown/</guid>
       <description>마크다운 작성법에 대해 정리한 글입니다.
 (시간 날 때마다 계속 추가 예정)
 [제목] #h1 ##h2 ###h3 ####h4 #####h5 ######h6 [개행] 개행을 하려면 문장의 끝에 스페이스 두개 해줘야함
@@ -45,10 +45,10 @@ int main()</description>
     
     <item>
       <title>.sh로 배포 쉽게하기</title>
-      <link>https://bumsoft.github.io/writing/first/</link>
+      <link>https://bumsoft.github.io/writing/deploy/</link>
       <pubDate>Tue, 31 Oct 2023 23:13:41 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/first/</guid>
+      <guid>https://bumsoft.github.io/writing/deploy/</guid>
       <description>sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
 #!/bin/bash
 echo -e &amp;ldquo;\033[0;32mDeploying updates to GitHub&amp;hellip;\033[0m&amp;rdquo;
