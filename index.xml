@@ -14,11 +14,12 @@
       
       <guid>https://bumsoft.github.io/algorithm/dijkstra/</guid>
       <description>다익스트라 알고리즘은 하나의 정점 에서 다른 모든 정점으로 가는 최단 경로 탐색 알고리즘이다.
-알고리즘에 대한 자세한 설명은 건너뛰고 어떻게 구현위주로 작성하겠다.
+알고리즘에 대한 자세한 설명은 건너뛰고 구현위주로 작성하겠다.
 벡터 배열 우선순위 큐 C++로 다익스트라 구현하기 위해 위 3가지가 필요하다.
 우선 정점의 개수가 N개라고 가정을 하자.
 벡터는 다음과 같이 선언할 것이다. (1번 정점부터 N번 정점까지 저장해야하기에 N+1) vector&amp;lt;pair&amp;lt;int, int&amp;gt;&amp;gt; vertex[N+1]; vertex[i] : i번 정점
-vertex[i]의 원소 :pair( i에서 갈 수 있는 다른 정점 , 그 정점까지의 가중치 )</description>
+vertex[i]의 원소 :pair( i에서 갈 수 있는 다른 정점 , 그 정점까지의 가중치 )
+예를 들어 다음 그래프에서 vertex[1]과 vertex[2]의 원소는 다음과 같다.</description>
     </item>
     
     <item>
