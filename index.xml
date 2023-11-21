@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>간단한 피보나치 계산기</title>
+      <link>https://bumsoft.github.io/writing/fib/</link>
+      <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
+      
+      <guid>https://bumsoft.github.io/writing/fib/</guid>
+      <description> &lt;!DOCTYPE html&gt; 간단한 피보나치 계산기 구하려는 fib(N)의 N: 구하기 결과: </description>
+    </item>
+    
+    <item>
       <title>간단한 계산기</title>
       <link>https://bumsoft.github.io/writing/test/</link>
       <pubDate>Tue, 21 Nov 2023 23:47:33 +0900</pubDate>
