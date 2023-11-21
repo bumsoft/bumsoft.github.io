@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bumsoft.github.io/writing/test/</loc>
+    <lastmod>2023-11-21T23:47:33+09:00</lastmod>
+  </url><url>
     <loc>https://bumsoft.github.io/algorithm/dijkstra/</loc>
     <lastmod>2023-11-20T16:05:08+09:00</lastmod>
   </url><url>

@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>간단한 계산기</title>
+      <link>https://bumsoft.github.io/writing/test/</link>
+      <pubDate>Tue, 21 Nov 2023 23:47:33 +0900</pubDate>
+      
+      <guid>https://bumsoft.github.io/writing/test/</guid>
+      <description> &lt;!DOCTYPE html&gt; 간단한 계산기 간단한 계산기 첫 번째 숫자: 두 번째 숫자: 더하기 결과: </description>
+    </item>
+    
+    <item>
       <title>다익스트라</title>
       <link>https://bumsoft.github.io/algorithm/dijkstra/</link>
       <pubDate>Mon, 20 Nov 2023 16:05:08 +0900</pubDate>
