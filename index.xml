@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Prim&#39;s algorithm</title>
+      <link>https://bumsoft.github.io/algorithm/prim/</link>
+      <pubDate>Fri, 24 Nov 2023 23:24:23 +0900</pubDate>
+      
+      <guid>https://bumsoft.github.io/algorithm/prim/</guid>
+      <description>프림알고리즘은 최소신장트리, MST(minimum spanning tree)를 찾는 알고리즘이다. 최소신장트리 는 무향그래프의 모든 정점을 잇는 신장트리 중 그 가중치의 합이 최소인 그래프이다.
+알고리즘은 다음과 같다.
+(1) 시작할 정점을 선택한다. 아무 정점이나 선택해도 된다. (2) 선택한 정점에서 갈 수 있는 다른 정점 중 가장 가중치가 작은 정점을 선택해 잇는다. (3) 이어진 정점들에서 갈 수 있는 정점 중 가장 가중치가 작은 정점을 선택해 잇는다. (4) 모든 정점을 선택할 때 까지 (3)과정을 계속 반복 이어진 정점이라고 표기했는데 선택한 정점이 최소신장트리에 포함되는 것이며,</description>
+    </item>
+    
+    <item>
       <title>간단한 피보나치 계산기</title>
       <link>https://bumsoft.github.io/writing/fib/</link>
       <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
