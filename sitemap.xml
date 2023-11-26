@@ -4,47 +4,79 @@
   <url>
     <loc>https://bumsoft.github.io/algorithm/prim/</loc>
     <lastmod>2023-11-24T23:24:23+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/fib/</loc>
     <lastmod>2023-11-22T00:19:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/test/</loc>
     <lastmod>2023-11-21T23:47:33+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/algorithm/dijkstra/</loc>
     <lastmod>2023-11-20T16:05:08+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/pointer/</loc>
     <lastmod>2023-11-08T19:47:47+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/project/</loc>
     <lastmod>2023-11-07T20:53:02+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/project/project_game/</loc>
     <lastmod>2023-11-07T20:51:50+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/</loc>
     <lastmod>2023-11-05T14:48:08+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/algorithm/</loc>
     <lastmod>2023-11-05T14:48:08+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/</loc>
     <lastmod>2023-11-05T14:48:08+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/algorithm/7677/</loc>
     <lastmod>2023-11-05T04:06:08+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/markdown/</loc>
     <lastmod>2023-11-04T19:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/writing/deploy/</loc>
     <lastmod>2023-10-31T23:13:41+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://bumsoft.github.io/tags/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
