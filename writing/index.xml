@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>writing on BumSoft</title>
-    <link>https://bumsoft.github.io/writing/</link>
+    <link>https://bumcode.kr/writing/</link>
     <description>Recent content in writing on BumSoft</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/writing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>간단한 피보나치 계산기</title>
-      <link>https://bumsoft.github.io/writing/fib/</link>
+      <link>https://bumcode.kr/writing/fib/</link>
       <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/fib/</guid>
+      <guid>https://bumcode.kr/writing/fib/</guid>
       <description> &lt;!DOCTYPE html&gt; 간단한 피보나치 계산기 구하려는 fib(N)의 N: 구하기 결과: </description>
     </item>
     
     <item>
       <title>간단한 계산기</title>
-      <link>https://bumsoft.github.io/writing/test/</link>
+      <link>https://bumcode.kr/writing/test/</link>
       <pubDate>Tue, 21 Nov 2023 23:47:33 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/test/</guid>
+      <guid>https://bumcode.kr/writing/test/</guid>
       <description> &lt;!DOCTYPE html&gt; 간단한 계산기 첫 번째 숫자: 두 번째 숫자: 더하기 결과: </description>
     </item>
     
     <item>
       <title>C언어 포인터/배열</title>
-      <link>https://bumsoft.github.io/writing/pointer/</link>
+      <link>https://bumcode.kr/writing/pointer/</link>
       <pubDate>Wed, 08 Nov 2023 19:47:47 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/pointer/</guid>
+      <guid>https://bumcode.kr/writing/pointer/</guid>
       <description>헷갈리기 쉬운 부분이니 확실하게 정리하고 넘어가는게 좋을 것 같다.
 배열과 포인터의 관계를 이해하기위해 알아야하는 것이 있다.
 arr[i] == *(arr+i) 이게 같은 표현이라는 것. 이걸 이용해 2차원 배열까지 포인터로 표현할 수가 있다.
@@ -42,10 +42,10 @@ int arr1[3] = { 1,2,3 }; int* ptr1 = arr1; cout &amp;lt;&amp;lt; ptr1[1] &amp;lt
     
     <item>
       <title>Markdown 문법</title>
-      <link>https://bumsoft.github.io/writing/markdown/</link>
+      <link>https://bumcode.kr/writing/markdown/</link>
       <pubDate>Sat, 04 Nov 2023 19:00:00 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/markdown/</guid>
+      <guid>https://bumcode.kr/writing/markdown/</guid>
       <description>마크다운 작성법에 대해 정리한 글입니다.
 (시간 날 때마다 계속 추가 예정)
 [제목] #h1 ##h2 ###h3 ####h4 #####h5 ######h6 [개행] 개행을 하려면 문장의 끝에 스페이스 두개 해줘야함
@@ -62,10 +62,10 @@ int main()</description>
     
     <item>
       <title>.sh로 배포 쉽게하기</title>
-      <link>https://bumsoft.github.io/writing/deploy/</link>
+      <link>https://bumcode.kr/writing/deploy/</link>
       <pubDate>Tue, 31 Oct 2023 23:13:41 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/deploy/</guid>
+      <guid>https://bumcode.kr/writing/deploy/</guid>
       <description>sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
 #!/bin/bash
 echo -e &amp;ldquo;\033[0;32mDeploying updates to GitHub&amp;hellip;\033[0m&amp;rdquo;

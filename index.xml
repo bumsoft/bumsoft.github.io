@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BumSoft</title>
-    <link>https://bumsoft.github.io/</link>
+    <link>https://bumcode.kr/</link>
     <description>Recent content on BumSoft</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumsoft.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prim&#39;s algorithm</title>
-      <link>https://bumsoft.github.io/algorithm/prim/</link>
+      <link>https://bumcode.kr/algorithm/prim/</link>
       <pubDate>Fri, 24 Nov 2023 23:24:23 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/algorithm/prim/</guid>
+      <guid>https://bumcode.kr/algorithm/prim/</guid>
       <description>프림알고리즘은 최소신장트리, MST(minimum spanning tree)를 찾는 알고리즘이다. 최소신장트리 는 무향그래프의 모든 정점을 잇는 신장트리 중 그 가중치의 합이 최소인 그래프이다.
 알고리즘은 다음과 같다.
 (1) 시작할 정점을 선택한다. 아무 정점이나 선택해도 된다. (2) 선택한 정점에서 갈 수 있는 다른 정점 중 가장 가중치가 작은 정점을 선택해 잇는다. (3) 이어진 정점들에서 갈 수 있는 정점 중 가장 가중치가 작은 정점을 선택해 잇는다. (4) 모든 정점을 선택할 때 까지 (3)과정을 계속 반복 이어진 정점이라고 표기했는데 선택한 정점이 최소신장트리에 포함되는 것이며,</description>
@@ -20,28 +20,28 @@
     
     <item>
       <title>간단한 피보나치 계산기</title>
-      <link>https://bumsoft.github.io/writing/fib/</link>
+      <link>https://bumcode.kr/writing/fib/</link>
       <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/fib/</guid>
+      <guid>https://bumcode.kr/writing/fib/</guid>
       <description> &lt;!DOCTYPE html&gt; 간단한 피보나치 계산기 구하려는 fib(N)의 N: 구하기 결과: </description>
     </item>
     
     <item>
       <title>간단한 계산기</title>
-      <link>https://bumsoft.github.io/writing/test/</link>
+      <link>https://bumcode.kr/writing/test/</link>
       <pubDate>Tue, 21 Nov 2023 23:47:33 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/test/</guid>
+      <guid>https://bumcode.kr/writing/test/</guid>
       <description> &lt;!DOCTYPE html&gt; 간단한 계산기 첫 번째 숫자: 두 번째 숫자: 더하기 결과: </description>
     </item>
     
     <item>
       <title>Dijkstra&#39;s algorithm</title>
-      <link>https://bumsoft.github.io/algorithm/dijkstra/</link>
+      <link>https://bumcode.kr/algorithm/dijkstra/</link>
       <pubDate>Mon, 20 Nov 2023 16:05:08 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/algorithm/dijkstra/</guid>
+      <guid>https://bumcode.kr/algorithm/dijkstra/</guid>
       <description>다익스트라 알고리즘은 하나의 정점 에서 다른 모든 정점으로 가는 최단 경로 탐색 알고리즘이다.
 알고리즘에 대한 자세한 설명은 건너뛰고 구현위주로 작성하겠다.
 벡터 배열 우선순위 큐 C++로 다익스트라 구현하기 위해 위 3가지가 필요하다.
@@ -53,10 +53,10 @@ vertex[i]의 원소 :pair( i에서 갈 수 있는 다른 정점 , 그 정점까�
     
     <item>
       <title>C언어 포인터/배열</title>
-      <link>https://bumsoft.github.io/writing/pointer/</link>
+      <link>https://bumcode.kr/writing/pointer/</link>
       <pubDate>Wed, 08 Nov 2023 19:47:47 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/pointer/</guid>
+      <guid>https://bumcode.kr/writing/pointer/</guid>
       <description>헷갈리기 쉬운 부분이니 확실하게 정리하고 넘어가는게 좋을 것 같다.
 배열과 포인터의 관계를 이해하기위해 알아야하는 것이 있다.
 arr[i] == *(arr+i) 이게 같은 표현이라는 것. 이걸 이용해 2차원 배열까지 포인터로 표현할 수가 있다.
@@ -68,10 +68,10 @@ int arr1[3] = { 1,2,3 }; int* ptr1 = arr1; cout &amp;lt;&amp;lt; ptr1[1] &amp;lt
     
     <item>
       <title>자바로 게임만들기</title>
-      <link>https://bumsoft.github.io/project/project_game/</link>
+      <link>https://bumcode.kr/project/project_game/</link>
       <pubDate>Tue, 07 Nov 2023 20:51:50 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/project/project_game/</guid>
+      <guid>https://bumcode.kr/project/project_game/</guid>
       <description>(사진 클릭 시 유튜브로 연결!)
 과제 연습삼아 틀만 만들어보려 시작했는데 생각보다 재미있어서 금방 만들었다.
 총알과 공은 벡터를 이용해 추적하고 삭제하는 방식인데 아직 OOP로 프로그램을 만들어본 경험이 거의 없어 코드가 약간 스파게티코드라&amp;hellip; 조만간 제대로된 MVC구조로 다시 설계할 예정이다.</description>
@@ -79,10 +79,10 @@ int arr1[3] = { 1,2,3 }; int* ptr1 = arr1; cout &amp;lt;&amp;lt; ptr1[1] &amp;lt
     
     <item>
       <title>C&#43;&#43; 백준 7677 Fibonacci</title>
-      <link>https://bumsoft.github.io/algorithm/7677/</link>
+      <link>https://bumcode.kr/algorithm/7677/</link>
       <pubDate>Sun, 05 Nov 2023 04:06:08 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/algorithm/7677/</guid>
+      <guid>https://bumcode.kr/algorithm/7677/</guid>
       <description>문제 풀러가기 피보나치수를 구하는 문제였다.
 다만 N의 최대가 1,000,000,000이라 예전에 dp로 풀었을 땐 시간초과가 났다.
 이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.
@@ -95,10 +95,10 @@ N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
     
     <item>
       <title>Markdown 문법</title>
-      <link>https://bumsoft.github.io/writing/markdown/</link>
+      <link>https://bumcode.kr/writing/markdown/</link>
       <pubDate>Sat, 04 Nov 2023 19:00:00 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/markdown/</guid>
+      <guid>https://bumcode.kr/writing/markdown/</guid>
       <description>마크다운 작성법에 대해 정리한 글입니다.
 (시간 날 때마다 계속 추가 예정)
 [제목] #h1 ##h2 ###h3 ####h4 #####h5 ######h6 [개행] 개행을 하려면 문장의 끝에 스페이스 두개 해줘야함
@@ -115,10 +115,10 @@ int main()</description>
     
     <item>
       <title>.sh로 배포 쉽게하기</title>
-      <link>https://bumsoft.github.io/writing/deploy/</link>
+      <link>https://bumcode.kr/writing/deploy/</link>
       <pubDate>Tue, 31 Oct 2023 23:13:41 +0900</pubDate>
       
-      <guid>https://bumsoft.github.io/writing/deploy/</guid>
+      <guid>https://bumcode.kr/writing/deploy/</guid>
       <description>sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
 #!/bin/bash
 echo -e &amp;ldquo;\033[0;32mDeploying updates to GitHub&amp;hellip;\033[0m&amp;rdquo;
@@ -140,10 +140,10 @@ git commit -m &amp;ldquo;$msg&amp;rdquo;
     
     <item>
       <title>About Me</title>
-      <link>https://bumsoft.github.io/about/</link>
+      <link>https://bumcode.kr/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://bumsoft.github.io/about/</guid>
+      <guid>https://bumcode.kr/about/</guid>
       <description>안녕하세요! 신진범입니다.
 저의 흔적을 기록하는 곳입니다.
 프로젝트 알고리즘 CS공부 웹 &amp;hellip; </description>
