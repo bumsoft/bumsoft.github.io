@@ -1,0 +1,500 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>C&#43;&#43; 백준 7677 Fibonacci - BumSoft</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="문제 풀러가기 피보나치수를 구하는 문제였다.
+다만 N의 최대가 1,000,000,000이라 예전에 dp로 풀었을 땐 시간초과가 났다.
+이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.
+풀이 행렬의 거듭제곱을 이용해야한다. 다만, N번 곱한다면 시간복잡도가 O(N) 이기에 이문제는 풀 수 없다.
+분할정복을 이용한 거듭제곱 알고리즘을 사용해 O(logN)으로 풀 수 있다. 분할정복을 이용한 거듭제곱
+N이 짝수 A^N = A^(N/2) * A^(N/2)
+N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
+2*2라 그냥 2차원배열로 만들까 생각도 했지만 이번기회에 벡터사용에 익숙해지면 좋을 것 같아 벡터를 사용했다." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="C&#43;&#43; 백준 7677 Fibonacci">
+<meta itemprop="description" content="문제 풀러가기 피보나치수를 구하는 문제였다.
+다만 N의 최대가 1,000,000,000이라 예전에 dp로 풀었을 땐 시간초과가 났다.
+이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.
+풀이 행렬의 거듭제곱을 이용해야한다. 다만, N번 곱한다면 시간복잡도가 O(N) 이기에 이문제는 풀 수 없다.
+분할정복을 이용한 거듭제곱 알고리즘을 사용해 O(logN)으로 풀 수 있다. 분할정복을 이용한 거듭제곱
+N이 짝수 A^N = A^(N/2) * A^(N/2)
+N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
+2*2라 그냥 2차원배열로 만들까 생각도 했지만 이번기회에 벡터사용에 익숙해지면 좋을 것 같아 벡터를 사용했다."><meta itemprop="datePublished" content="2023-11-05T04:06:08+09:00" />
+<meta itemprop="dateModified" content="2023-11-05T04:06:08+09:00" />
+<meta itemprop="wordCount" content="465">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="C&#43;&#43; 백준 7677 Fibonacci" />
+<meta property="og:description" content="문제 풀러가기 피보나치수를 구하는 문제였다.
+다만 N의 최대가 1,000,000,000이라 예전에 dp로 풀었을 땐 시간초과가 났다.
+이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.
+풀이 행렬의 거듭제곱을 이용해야한다. 다만, N번 곱한다면 시간복잡도가 O(N) 이기에 이문제는 풀 수 없다.
+분할정복을 이용한 거듭제곱 알고리즘을 사용해 O(logN)으로 풀 수 있다. 분할정복을 이용한 거듭제곱
+N이 짝수 A^N = A^(N/2) * A^(N/2)
+N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
+2*2라 그냥 2차원배열로 만들까 생각도 했지만 이번기회에 벡터사용에 익숙해지면 좋을 것 같아 벡터를 사용했다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/algorithm/ps/7677/" /><meta property="article:section" content="algorithm" />
+<meta property="article:published_time" content="2023-11-05T04:06:08+09:00" />
+<meta property="article:modified_time" content="2023-11-05T04:06:08+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43; 백준 7677 Fibonacci"/>
+<meta name="twitter:description" content="문제 풀러가기 피보나치수를 구하는 문제였다.
+다만 N의 최대가 1,000,000,000이라 예전에 dp로 풀었을 땐 시간초과가 났다.
+이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.
+풀이 행렬의 거듭제곱을 이용해야한다. 다만, N번 곱한다면 시간복잡도가 O(N) 이기에 이문제는 풀 수 없다.
+분할정복을 이용한 거듭제곱 알고리즘을 사용해 O(logN)으로 풀 수 있다. 분할정복을 이용한 거듭제곱
+N이 짝수 A^N = A^(N/2) * A^(N/2)
+N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
+2*2라 그냥 2차원배열로 만들까 생각도 했지만 이번기회에 벡터사용에 익숙해지면 좋을 것 같아 벡터를 사용했다."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/algorithm/ps/7677/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumSoft</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writings</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">C&#43;&#43; 백준 7677 Fibonacci</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 5, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p><a href="https://www.acmicpc.net/problem/7677">문제 풀러가기</a>
+<img src="/Q7677.png" alt="7677"></p>
+<p><strong>피보나치수</strong>를 구하는 문제였다.<br>
+다만 N의 최대가 1,000,000,000이라 예전에 <strong>dp</strong>로 풀었을 땐 시간초과가 났다.</p>
+<p>이산수학에서 행렬을 배우고 다시 보니 풀 수 있을 것 같아서 다시 풀어봤다.</p>
+<h3 id="풀이">풀이</h3>
+<blockquote>
+<ul>
+<li>행렬의 거듭제곱을 이용해야한다.</li>
+<li>다만, N번 곱한다면 시간복잡도가 O(N) 이기에 이문제는 풀 수 없다.<br>
+분할정복을 이용한 거듭제곱 알고리즘을 사용해 O(logN)으로 풀 수 있다.</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>분할정복을 이용한 거듭제곱<br>
+N이 짝수 A^N = A^(N/2) * A^(N/2)<br>
+N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A</p>
+</blockquote>
+<p>2*2라 그냥 2차원배열로 만들까 생각도 했지만 이번기회에 벡터사용에 익숙해지면 좋을 것 같아 벡터를 사용했다.</p>
+<p>우선 행렬 matrix를 vector를 이용해 선언해주고</p>
+<pre tabindex="0"><code>typedef vector&lt;vector&lt;int&gt;&gt; matrix;
+</code></pre><p>연산자 오버로딩으로 행렬의 곱연산을 정의해줬다. 3중 for문이라 구현이 어려운 것 같다.</p>
+<pre tabindex="0"><code>matrix operator*(const matrix&amp; a, const matrix&amp; b)
+{
+	matrix res(size, vector&lt;int&gt;(size)); //크기를 지정하면 백터는 0으로 초기화됨
+
+	for (int i = 0; i &lt; size; i++)
+	{
+		for (int j = 0; j &lt; size; j++)
+		{
+			for (int k = 0; k &lt; size; k++) //a의 행과 b의 열은 i,j,로 고정시키고 열과 행을 k로 바꾸면서 연산
+			{
+				res[i][j] += a[i][k] * b[k][j];
+			}
+			res[i][j] %= 10000; //10000으로 나눈 나머지.
+		}
+	}
+	return res;
+}
+</code></pre><p>다음은 행렬과 정수를 받아 제곱을 해주는 함수이다.<br>
+반복문으로 구현할 수도 있지만 구현이 더 쉬운 재귀로 구현했다.
+<img src="/7677r.png" alt="7677">  N이 10억이라 해도 재귀는 30번만 돌기때문에 메모리는 충분하다.</p>
+<pre tabindex="0"><code>matrix power(matrix a, int b) //a^b
+{
+	if (b == 1) return a;
+	if (b % 2 == 0)
+	{
+		matrix half = power(a, b / 2); 
+		return half * half;
+	}
+	else
+	{
+		matrix half = power(a, (b - 1) / 2);
+		return half * half * a;
+	}
+}
+</code></pre><h4 id="전체코드">전체코드</h4>
+<pre tabindex="0"><code>#include &lt;bits/stdc++.h&gt;
+#define size 2
+using namespace std;
+
+typedef vector&lt;vector&lt;int&gt;&gt; matrix;
+
+
+matrix operator*(const matrix&amp; a, const matrix&amp; b)
+{
+	matrix res(size, vector&lt;int&gt;(size)); //크기를 지정해서 0으로 초기화됨
+
+	for (int i = 0; i &lt; size; i++)
+	{
+		for (int j = 0; j &lt; size; j++)
+		{
+			for (int k = 0; k &lt; size; k++) //a의 행과 b의 열은 i,j,로 고정시키고 열과 행을 k로 바꾸면서 연산
+			{
+				res[i][j] += a[i][k] * b[k][j];
+			}
+			res[i][j] %= 10000; //10000으로 나눈 나머지.
+		}
+	}
+	return res;
+}
+
+matrix power(matrix a, int b) //a^b
+{
+	if (b == 1) return a;
+	if (b % 2 == 0)
+	{
+		matrix half = power(a, b / 2); 
+		return half * half;
+	}
+	else
+	{
+		matrix half = power(a, (b - 1) / 2);
+		return half * half * a;
+	}
+}
+
+int main()
+{
+	int N; //0 &lt;= N &lt;= 1,000,000,000
+	matrix res{ {1, 1}, 
+				{ 1,0 } };
+	matrix original{ {1, 1},
+				{ 1,0 } };
+	while (true)
+	{
+		cin &gt;&gt; N;
+		if (N == -1) break;
+		if (N == 0) { cout &lt;&lt; 0 &lt;&lt; &#39;\n&#39;; continue; }
+		res = original;
+		res = power(res, N);
+		cout &lt;&lt; res[0][1] &lt;&lt; endl;
+	}
+
+	return 0;
+}
+</code></pre><p>행렬 곱연산은 size만 건드리면 되기에 다른 곳에도 써먹을 수 있을 것 같다.</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://bumcode.kr">BumSoft</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

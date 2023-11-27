@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dir-game on BumSoft</title>
+    <link>https://bumcode.kr/project/dir-game/</link>
+    <description>Recent content in Dir-game on BumSoft</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Nov 2023 00:00:50 +0900</lastBuildDate><atom:link href="https://bumcode.kr/project/dir-game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바 swing</title>
+      <link>https://bumcode.kr/project/dir-game/project_game/</link>
+      <pubDate>Tue, 07 Nov 2023 20:51:50 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/project/dir-game/project_game/</guid>
+      <description>(사진 클릭 시 유튜브로 연결!)
+과제 연습삼아 틀만 만들어보려 시작했는데 생각보다 재미있어서 금방 만들었다.
+총알과 공은 벡터를 이용해 추적하고 삭제하는 방식인데 아직 OOP로 프로그램을 만들어본 경험이 거의 없어 코드가 약간 스파게티코드라&amp;hellip; 조만간 제대로된 MVC구조로 다시 설계할 예정이다.
+2023/11/27
+구조도이다. 거의 완성했고 코드는 나중에 깃헙에 올릴 생각이다.
+메뉴, 랭킹, 아이템 등의 기능을 추가했다.</description>
+    </item>
+    
+  </channel>
+</rss>
