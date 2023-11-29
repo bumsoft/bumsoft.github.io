@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bumcode.kr/algorithm/ps/</loc>
+    <lastmod>2023-11-29T22:13:46+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/algorithm/ps/2252/</loc>
+    <lastmod>2023-11-29T22:13:46+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bumcode.kr/algorithm/graph/</loc>
     <lastmod>2023-11-24T23:24:23+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -52,17 +62,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/algorithm/</loc>
-    <lastmod>2023-11-05T14:48:08+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://bumcode.kr/</loc>
     <lastmod>2023-11-05T14:48:08+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/algorithm/ps/</loc>
+    <loc>https://bumcode.kr/algorithm/</loc>
     <lastmod>2023-11-05T14:48:08+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -102,6 +107,10 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://bumcode.kr/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/project/game-directory/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
