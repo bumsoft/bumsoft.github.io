@@ -50,7 +50,7 @@
   />
 
   
-  <title>.sh로 배포 쉽게하기 - BumCode</title>
+  <title>shell 배포자동화 - BumCode</title>
 
   
   <meta name="theme-color" />
@@ -59,23 +59,7 @@
   
   
   
-  <meta name="description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
-#!/bin/bash
-echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
-# Build the project.
-# hugo -t &lt;여러분의 테마&gt;
-hugo -t 테마이름
-# Go To Public folder, sub module commit
-cd public
-# Add changes to git.
-git add .
-# Commit changes.
-msg=&ldquo;rebuilding site date&rdquo;
-if [ $# -eq 1 ]
-then msg=&quot;$1&quot;
-fi
-git commit -m &ldquo;$msg&rdquo;
-# Push source and build repos." />
+  <meta name="description" content="c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. #!/bin/bash echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34; \# Build the project. \# hugo -t &lt;여러분의 테마&gt; hugo -t 테마이름 \# Go To Public folder, sub module commit cd public \# Add changes to git. git add . \# Commit changes. msg=&#34;rebuilding site `date`&#34; if [ $# -eq 1 ] then msg=&#34;$1&#34; fi git commit -m &#34;$msg&#34; \# Push source and build repos. git push origin main \# Come Back up to the Project Root cd ." />
   <meta name="author" content="신진범" />
   
 
@@ -146,46 +130,14 @@ if (!doNotTrack) {
 </script>
 
   
-  <meta itemprop="name" content=".sh로 배포 쉽게하기">
-<meta itemprop="description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
-#!/bin/bash
-echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
-# Build the project.
-# hugo -t &lt;여러분의 테마&gt;
-hugo -t 테마이름
-# Go To Public folder, sub module commit
-cd public
-# Add changes to git.
-git add .
-# Commit changes.
-msg=&ldquo;rebuilding site date&rdquo;
-if [ $# -eq 1 ]
-then msg=&quot;$1&quot;
-fi
-git commit -m &ldquo;$msg&rdquo;
-# Push source and build repos."><meta itemprop="datePublished" content="2023-10-31T23:13:41+09:00" />
+  <meta itemprop="name" content="shell 배포자동화">
+<meta itemprop="description" content="c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. #!/bin/bash echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34; \# Build the project. \# hugo -t &lt;여러분의 테마&gt; hugo -t 테마이름 \# Go To Public folder, sub module commit cd public \# Add changes to git. git add . \# Commit changes. msg=&#34;rebuilding site `date`&#34; if [ $# -eq 1 ] then msg=&#34;$1&#34; fi git commit -m &#34;$msg&#34; \# Push source and build repos. git push origin main \# Come Back up to the Project Root cd ."><meta itemprop="datePublished" content="2023-10-31T23:13:41+09:00" />
 <meta itemprop="dateModified" content="2023-10-31T23:13:41+09:00" />
-<meta itemprop="wordCount" content="134">
+<meta itemprop="wordCount" content="129">
 <meta itemprop="keywords" content="" />
   
-  <meta property="og:title" content=".sh로 배포 쉽게하기" />
-<meta property="og:description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
-#!/bin/bash
-echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
-# Build the project.
-# hugo -t &lt;여러분의 테마&gt;
-hugo -t 테마이름
-# Go To Public folder, sub module commit
-cd public
-# Add changes to git.
-git add .
-# Commit changes.
-msg=&ldquo;rebuilding site date&rdquo;
-if [ $# -eq 1 ]
-then msg=&quot;$1&quot;
-fi
-git commit -m &ldquo;$msg&rdquo;
-# Push source and build repos." />
+  <meta property="og:title" content="shell 배포자동화" />
+<meta property="og:description" content="c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. #!/bin/bash echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34; \# Build the project. \# hugo -t &lt;여러분의 테마&gt; hugo -t 테마이름 \# Go To Public folder, sub module commit cd public \# Add changes to git. git add . \# Commit changes. msg=&#34;rebuilding site `date`&#34; if [ $# -eq 1 ] then msg=&#34;$1&#34; fi git commit -m &#34;$msg&#34; \# Push source and build repos. git push origin main \# Come Back up to the Project Root cd ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bumcode.kr/writing/dir-static-web/deploy/" /><meta property="article:section" content="writing" />
 <meta property="article:published_time" content="2023-10-31T23:13:41+09:00" />
@@ -193,24 +145,8 @@ git commit -m &ldquo;$msg&rdquo;
 
   
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=".sh로 배포 쉽게하기"/>
-<meta name="twitter:description" content="sh파일로 쉽게 배포하기 c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. ======================deploy.sh========================
-#!/bin/bash
-echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;
-# Build the project.
-# hugo -t &lt;여러분의 테마&gt;
-hugo -t 테마이름
-# Go To Public folder, sub module commit
-cd public
-# Add changes to git.
-git add .
-# Commit changes.
-msg=&ldquo;rebuilding site date&rdquo;
-if [ $# -eq 1 ]
-then msg=&quot;$1&quot;
-fi
-git commit -m &ldquo;$msg&rdquo;
-# Push source and build repos."/>
+<meta name="twitter:title" content="shell 배포자동화"/>
+<meta name="twitter:description" content="c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. #!/bin/bash echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34; \# Build the project. \# hugo -t &lt;여러분의 테마&gt; hugo -t 테마이름 \# Go To Public folder, sub module commit cd public \# Add changes to git. git add . \# Commit changes. msg=&#34;rebuilding site `date`&#34; if [ $# -eq 1 ] then msg=&#34;$1&#34; fi git commit -m &#34;$msg&#34; \# Push source and build repos. git push origin main \# Come Back up to the Project Root cd ."/>
 
   
   
@@ -358,7 +294,7 @@ git commit -m &ldquo;$msg&rdquo;
 
 <article>
   <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">.sh로 배포 쉽게하기</h1>
+    <h1 class="!my-0 pb-2.5">shell 배포자동화</h1>
 
     
     <div class="text-sm antialiased opacity-60">
@@ -372,39 +308,36 @@ git commit -m &ldquo;$msg&rdquo;
     
   </header>
 
-  <section><h3 id="sh파일로-쉽게-배포하기">sh파일로 쉽게 배포하기</h3>
-<p>c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. <br>
+  <section><p>c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. <br>
 <img src="/b1.png" alt="screensh"></p>
-<p>======================deploy.sh========================<br>
-#!/bin/bash<br>
-echo -e &ldquo;\033[0;32mDeploying updates to GitHub&hellip;\033[0m&rdquo;<br>
-# Build the project.<br>
-# hugo -t &lt;여러분의 테마&gt;<br>
-hugo -t 테마이름<br>
-# Go To Public folder, sub module commit<br>
-cd public<br>
-# Add changes to git.<br>
-git add .<br>
-# Commit changes.<br>
-msg=&ldquo;rebuilding site <code>date</code>&rdquo;<br>
-if [ $# -eq 1 ]<br>
-then msg=&quot;$1&quot;<br>
-fi<br>
-git commit -m &ldquo;$msg&rdquo;<br>
-# Push source and build repos.<br>
-git push origin main<br>
-# Come Back up to the Project Root<br>
-cd ..<br>
-# blog 저장소 Commit &amp; Push<br>
-git add .<br>
-msg=&ldquo;rebuilding site <code>date</code>&rdquo;<br>
-if [ $# -eq 1 ]<br>
-then msg=&quot;$1&quot;<br>
-fi<br>
-git commit -m &ldquo;$msg&rdquo;<br>
-git push origin main</p>
-<p>=======================================================<br>
-작성 후 cmd로<br>
+<pre tabindex="0"><code>#!/bin/bash  
+echo -e &#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;  
+\# Build the project.  
+\# hugo -t &lt;여러분의 테마&gt;  
+hugo -t 테마이름  
+\# Go To Public folder, sub module commit  
+cd public  
+\# Add changes to git.  
+git add .  
+\# Commit changes.  
+msg=&#34;rebuilding site `date`&#34;  
+if [ $# -eq 1 ]  
+  then msg=&#34;$1&#34;  
+fi  
+git commit -m &#34;$msg&#34;  
+\# Push source and build repos.  
+git push origin main  
+\# Come Back up to the Project Root  
+cd ..  
+\# blog 저장소 Commit &amp; Push  
+git add .  
+msg=&#34;rebuilding site `date`&#34;  
+if [ $# -eq 1 ]  
+  then msg=&#34;$1&#34;  
+fi  
+git commit -m &#34;$msg&#34;  
+git push origin main  
+</code></pre><p>복붙 후 cmd로<br>
 실행권한부여 : $ chmod 777 deploy.sh<br>
 실행    : $ ./deploy.sh 해주면 알아서 git commit / push해줌!</p>
 </section>
