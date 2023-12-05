@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on BumSoft</title>
+    <title>Projects on BumCode</title>
     <link>https://bumcode.kr/project/</link>
-    <description>Recent content in Projects on BumSoft</description>
+    <description>Recent content in Projects on BumCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Nov 2023 20:51:50 +0900</lastBuildDate><atom:link href="https://bumcode.kr/project/index.xml" rel="self" type="application/rss+xml" />
