@@ -8,6 +8,19 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>구조체</title>
+      <link>https://bumcode.kr/writing/dir-c_lang/struct/</link>
+      <pubDate>Wed, 06 Dec 2023 12:10:53 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/dir-c_lang/struct/</guid>
+      <description>클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
+구조체는 사용자 정의 자료형이라 이해하면 된다.
+구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
+struct Car{char name[10];int year;}; 위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.
+//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)struct Car{char name[10];int year;}car1,car2,car3;//함수 내에서 구조체 변수의 선언struct Car car1, car2, car3; 변수 선언 시 매번 struct를 붙이는게 싫다면, typedef를 사용하면 된다.</description>
+    </item>
+    
+    <item>
       <title>백준 2252 줄 세우기 C&#43;&#43;</title>
       <link>https://bumcode.kr/algorithm/ps/2252/</link>
       <pubDate>Wed, 29 Nov 2023 22:13:46 +0900</pubDate>
@@ -35,20 +48,20 @@
     
     <item>
       <title>간단한 피보나치 계산기</title>
-      <link>https://bumcode.kr/writing/dir-javascript-test/fib/</link>
+      <link>https://bumcode.kr/writing/dir-javascript_test/fib/</link>
       <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/dir-javascript-test/fib/</guid>
-      <description> &lt;!DOCTYPE html&gt; 간단한 피보나치 계산기 구하려는 fib(N)의 N: 구하기 결과: </description>
+      <guid>https://bumcode.kr/writing/dir-javascript_test/fib/</guid>
+      <description>&lt;!DOCTYPE html&gt;간단한 피보나치 계산기구하려는 fib(N)의 N:구하기결과: </description>
     </item>
     
     <item>
       <title>간단한 계산기</title>
-      <link>https://bumcode.kr/writing/dir-javascript-test/test/</link>
+      <link>https://bumcode.kr/writing/dir-javascript_test/test/</link>
       <pubDate>Tue, 21 Nov 2023 23:47:33 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/dir-javascript-test/test/</guid>
-      <description> &lt;!DOCTYPE html&gt; 간단한 계산기 첫 번째 숫자: 두 번째 숫자: 더하기 결과: </description>
+      <guid>https://bumcode.kr/writing/dir-javascript_test/test/</guid>
+      <description>&lt;!DOCTYPE html&gt;간단한 계산기첫 번째 숫자:두 번째 숫자:더하기결과: </description>
     </item>
     
     <item>
@@ -68,17 +81,17 @@ vertex[i]의 원소 :pair( i에서 갈 수 있는 다른 정점 , 그 정점까�
     
     <item>
       <title>C언어 포인터/배열</title>
-      <link>https://bumcode.kr/writing/dir-c-lang/pointer/</link>
+      <link>https://bumcode.kr/writing/dir-c_lang/pointer/</link>
       <pubDate>Wed, 08 Nov 2023 19:47:47 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/dir-c-lang/pointer/</guid>
+      <guid>https://bumcode.kr/writing/dir-c_lang/pointer/</guid>
       <description>헷갈리기 쉬운 부분이니 확실하게 정리하고 넘어가는게 좋을 것 같다.
 배열과 포인터의 관계를 이해하기위해 알아야하는 것이 있다.
 arr[i] == *(arr+i) 이게 같은 표현이라는 것. 이걸 이용해 2차원 배열까지 포인터로 표현할 수가 있다.
 1차원배열 배열은 정적배열과 동적배열로 구분된다.
 정적배열 우리가 흔히 떠올리는 int arr[]; 는 정적배열이다. 선언 시 배열의 크기를 지정해주어야하며, 크기의 자리에 변수가 올 수 없다.
 우선 간단하게 1차원 정적배열을 만들어보자.
-int arr1[3] = { 1,2,3 }; int* ptr1 = arr1; cout &amp;lt;&amp;lt; ptr1[1] &amp;lt;&amp;lt; &amp;#39;,&amp;#39; &amp;lt;&amp;lt; *(ptr1 + 1) &amp;lt;&amp;lt; endl; cout &amp;lt;&amp;lt; ptr1[3] &amp;lt;&amp;lt; endl; //쓰레기값!</description>
+int arr1[3] = { 1,2,3 };int* ptr1 = arr1;cout &amp;lt;&amp;lt; ptr1[1] &amp;lt;&amp;lt; &amp;#39;,&amp;#39; &amp;lt;&amp;lt; *(ptr1 + 1) &amp;lt;&amp;lt; endl;cout &amp;lt;&amp;lt; ptr1[3] &amp;lt;&amp;lt; endl; //쓰레기값!</description>
     </item>
     
     <item>
@@ -113,10 +126,10 @@ N이 홀수 A^N = A^((N-1)/2) * A^((N-1)/2) * A
     
     <item>
       <title>Markdown 문법</title>
-      <link>https://bumcode.kr/writing/dir-static-web/markdown/</link>
+      <link>https://bumcode.kr/writing/dir-static_web/markdown/</link>
       <pubDate>Sat, 04 Nov 2023 19:00:00 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/dir-static-web/markdown/</guid>
+      <guid>https://bumcode.kr/writing/dir-static_web/markdown/</guid>
       <description>마크다운 작성법에 대해 정리한 글입니다.
 (시간 날 때마다 계속 추가 예정)
 [제목] #h1 ##h2 ###h3 ####h4 #####h5 ######h6 [개행] 개행을 하려면 문장의 끝에 스페이스 두개 해줘야함
@@ -133,10 +146,10 @@ int main()</description>
     
     <item>
       <title>shell 배포자동화</title>
-      <link>https://bumcode.kr/writing/dir-static-web/deploy/</link>
+      <link>https://bumcode.kr/writing/dir-static_web/deploy/</link>
       <pubDate>Tue, 31 Oct 2023 23:13:41 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/dir-static-web/deploy/</guid>
+      <guid>https://bumcode.kr/writing/dir-static_web/deploy/</guid>
       <description>c:hugo/hugo_blog/deploy.sh 만들어서 코드로 다음 작성. #!/bin/bash echo -e &amp;#34;\033[0;32mDeploying updates to GitHub...\033[0m&amp;#34; \# Build the project. \# hugo -t &amp;lt;여러분의 테마&amp;gt; hugo -t 테마이름 \# Go To Public folder, sub module commit cd public \# Add changes to git. git add . \# Commit changes. msg=&amp;#34;rebuilding site `date`&amp;#34; if [ $# -eq 1 ] then msg=&amp;#34;$1&amp;#34; fi git commit -m &amp;#34;$msg&amp;#34; \# Push source and build repos. git push origin main \# Come Back up to the Project Root cd .</description>
     </item>
     

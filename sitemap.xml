@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bumcode.kr/writing/dir-c_lang/</loc>
+    <lastmod>2023-12-06T12:10:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/writing/dir-c_lang/struct/</loc>
+    <lastmod>2023-12-06T12:10:53+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bumcode.kr/algorithm/ps/</loc>
     <lastmod>2023-11-29T22:13:46+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -22,17 +32,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-javascript-test/</loc>
+    <loc>https://bumcode.kr/writing/dir-javascript_test/</loc>
     <lastmod>2023-11-22T00:19:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-javascript-test/fib/</loc>
+    <loc>https://bumcode.kr/writing/dir-javascript_test/fib/</loc>
     <lastmod>2023-11-22T00:19:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-javascript-test/test/</loc>
+    <loc>https://bumcode.kr/writing/dir-javascript_test/test/</loc>
     <lastmod>2023-11-21T23:47:33+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -42,12 +52,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-c-lang/pointer/</loc>
-    <lastmod>2023-11-08T19:47:47+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://bumcode.kr/writing/dir-c-lang/</loc>
+    <loc>https://bumcode.kr/writing/dir-c_lang/pointer/</loc>
     <lastmod>2023-11-08T19:47:47+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -82,12 +87,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-static-web/</loc>
+    <loc>https://bumcode.kr/writing/dir-static_web/</loc>
     <lastmod>2023-11-04T19:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-static-web/markdown/</loc>
+    <loc>https://bumcode.kr/writing/dir-static_web/markdown/</loc>
     <lastmod>2023-11-04T19:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -97,7 +102,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/writing/dir-static-web/deploy/</loc>
+    <loc>https://bumcode.kr/writing/dir-static_web/deploy/</loc>
     <lastmod>2023-10-31T23:13:41+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

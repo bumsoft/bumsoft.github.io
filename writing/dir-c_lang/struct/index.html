@@ -1,0 +1,473 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>구조체 - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
+구조체는 사용자 정의 자료형이라 이해하면 된다.
+구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
+struct Car{char name[10];int year;}; 위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.
+//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)struct Car{char name[10];int year;}car1,car2,car3;//함수 내에서 구조체 변수의 선언struct Car car1, car2, car3; 변수 선언 시 매번 struct를 붙이는게 싫다면, typedef를 사용하면 된다." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="구조체">
+<meta itemprop="description" content="클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
+구조체는 사용자 정의 자료형이라 이해하면 된다.
+구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
+struct Car{char name[10];int year;}; 위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.
+//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)struct Car{char name[10];int year;}car1,car2,car3;//함수 내에서 구조체 변수의 선언struct Car car1, car2, car3; 변수 선언 시 매번 struct를 붙이는게 싫다면, typedef를 사용하면 된다."><meta itemprop="datePublished" content="2023-12-06T12:10:53+09:00" />
+<meta itemprop="dateModified" content="2023-12-06T12:10:53+09:00" />
+<meta itemprop="wordCount" content="444">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="구조체" />
+<meta property="og:description" content="클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
+구조체는 사용자 정의 자료형이라 이해하면 된다.
+구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
+struct Car{char name[10];int year;}; 위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.
+//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)struct Car{char name[10];int year;}car1,car2,car3;//함수 내에서 구조체 변수의 선언struct Car car1, car2, car3; 변수 선언 시 매번 struct를 붙이는게 싫다면, typedef를 사용하면 된다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/writing/dir-c_lang/struct/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2023-12-06T12:10:53+09:00" />
+<meta property="article:modified_time" content="2023-12-06T12:10:53+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="구조체"/>
+<meta name="twitter:description" content="클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
+구조체는 사용자 정의 자료형이라 이해하면 된다.
+구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
+struct Car{char name[10];int year;}; 위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.
+//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)struct Car{char name[10];int year;}car1,car2,car3;//함수 내에서 구조체 변수의 선언struct Car car1, car2, car3; 변수 선언 시 매번 struct를 붙이는게 싫다면, typedef를 사용하면 된다."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/writing/dir-c_lang/struct/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">구조체</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Dec 6, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.<br>
+구조체는 사용자 정의 자료형이라 이해하면 된다.</p>
+<h4 id="구조체의-정의-및-변수선언">구조체의 정의 및 변수선언</h4>
+<p>구조체의 정의는 다음과 같다.</p>
+<pre tabindex="0"><code>struct Car{
+	char name[10];
+	int year;
+};
+</code></pre><p>위와 같이 구조체를 정의했다면 구조체 변수 선언은 다음과 같다.</p>
+<pre tabindex="0"><code>//구조체 정의시의 변수 선언(구조체 정의와 동시에 변수를 생성함)
+struct Car{
+	char name[10];
+	int year;
+}car1,car2,car3;
+
+//함수 내에서 구조체 변수의 선언
+struct Car car1, car2, car3;
+</code></pre><p>변수 선언 시 매번 struct를 붙이는게 싫다면, <strong>typedef</strong>를 사용하면 된다.</p>
+<pre tabindex="0"><code>typedef struct Car{
+	char name[10];
+	int year;
+}C;
+</code></pre><p>struct Car 를 C로 사용하겠다는 의미로,  우리가 long long을 간단하게 ll로 사용하고자 할 때 typedef long long ll; 처럼 사용하는 것처럼 말이다.
+이제 변수 선언시에 다음과 같이 간단하게 할 수 있다.</p>
+<pre tabindex="0"><code>C car1, car2, car3;
+</code></pre><h4 id="구조체-변수의-초기화">구조체 변수의 초기화</h4>
+<p>변수 선언시에 배열과 같이 { }를 사용하여 초기화할 수도 있고 하나씩 초기화해주는 것도 가능하다.</p>
+<pre tabindex="0"><code>C car1={sonata,2010};
+
+C car2;
+strcpy(car2.name, &#34;sonata&#34;);
+car2.year = 2010;
+</code></pre><h4 id="구조체의-메모리-할당">구조체의 메모리 할당</h4>
+<p>구조체의 멤버변수가 다음과 같다고 하자.<br>
+int, int, char<br>
+4+4+1 byte이므로 크기가 9byte라고 생각 할 수도 있겠지만, 구조체에선 그렇지 않다.<br>
+구조체 메모리 할당 시 멤버변수 중 <strong>크기가 가장 큰 변수의 자료형</strong> 을 기준으로 메모리를 할당하기 때문이다.
+위에선 int가 4byte로 가장 큰 자료형이니 4byte씩 할당되어 4+4+4 = 12byte가 된다.</p>
+<p><strong>주의할 점은 멤버가 같다고 해도 순서가 다르다면 크기가 달라진다.</strong></p>
+<pre tabindex="0"><code>struct A {	//12byte
+	char a;
+	int b;
+	char c;
+}; 
+
+struct B {	//8byte
+	char a;
+	char c;
+	int b;
+}; 
+</code></pre><p>우선 A와 B 모두 가장 큰 자료형은 int로 4byte이다.</p>
+<ul>
+<li>A의 경우<br>
+char a를 4바이트 공간에 할당한 뒤, 다음 4바이트에 int b를, 다음 4바이트에 char c를 할당한다.</li>
+<li>B의 경우<br>
+char a를 4바이트 공간에 할당한 뒤, (a는 1바이트만 사용하니 3바이트가 남는다) 다음 char c는 1바이트로 남은 3바이트 공간에 들어갈 수 있기때문에 char a와 char b는 연속된 메모리에 저장 된 후,
+남은 남은 2바이트를 건너뛰고 int b를 다음 4바이트에 할당한다.</li>
+</ul>
+<p>다른 예시를 보자.</p>
+<pre tabindex="0"><code>struct A {
+	char a[12];
+	int b;
+	double c;
+};
+
+struct B {
+	char a[13];
+	int b;
+	double c;
+};
+</code></pre><p>여기서 A와 B의 구조체 변수의 크기는 어떻게 될 것 같은가?</p>
+<ul>
+<li>
+<p>A의 경우<br>
+가장 큰 자료형 double : 8byte<br>
+char a[12]는 12byte이며, 8byte씩 할당되니 16byte공간에 a가 할당된다.<br>
+16의 공간에 12가 할당되었으니 4byte가 남는다.<br>
+다음 멤버변수인 int b의 크기는 4byte로 남은 공간에 들어 갈 수 있다.
+그렇기에 처음 16byte에 a와b가 꽉 차게 들어가며, 다음 8byte에 double c가 들어가 24byte가 된다.</p>
+</li>
+<li>
+<p>B의 경우<br>
+가장 큰 자료형 double : 8byte<br>
+char a[13]은 13byte로 처음 8+8, 16byte크기로 할당된다.<br>
+16공간에 13이 할당되었으니 3byte가 남는다.<br>
+다음 멤버인 int b는 4byte로 3byte 공간에 들어 갈 수 없기에 3바이트는 건너뛴다.
+다음 8byte 공간에 int b가 할당되고 4byte가 남는다.
+4byte에 double c : 8byte가 들어 갈 수 없으니 4byte는 건너뛰고 다음 8byte에 double c가 들어가 32byte가 된다.</p>
+</li>
+</ul>
+<p>구조체의 메모리 할당방식때문에 메모리낭비를 없애고 효율적으로 할당하려면 순서를 신경써 변수를 선언해주는 것이 좋다.</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/dir-javascript_test/fib/"
+      ><span>간단한 피보나치 계산기</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
