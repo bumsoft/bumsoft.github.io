@@ -6,7 +6,24 @@
     <description>Recent content in PS on BumCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Nov 2023 22:13:46 +0900</lastBuildDate><atom:link href="https://bumcode.kr/algorithm/ps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jan 2024 22:38:26 +0900</lastBuildDate><atom:link href="https://bumcode.kr/algorithm/ps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 1725 히스토그램 C&#43;&#43;</title>
+      <link>https://bumcode.kr/algorithm/ps/1725/</link>
+      <pubDate>Mon, 08 Jan 2024 22:38:26 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/algorithm/ps/1725/</guid>
+      <description>문제 풀러가기 세그먼트 트리를 사용하는 문제이다.
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 요세푸스 문제2 해답코드를 여러개 뜯어보면서 공부했다.
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.
+init():세그먼트 트리 초기화
+query():연산 수행
+update():필요한 경우 트리 업데이트
+위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.
+(문제 해설은 주석참고)
+#include &amp;lt;bits/stdc++.</description>
+    </item>
+    
     <item>
       <title>백준 2252 줄 세우기 C&#43;&#43;</title>
       <link>https://bumcode.kr/algorithm/ps/2252/</link>

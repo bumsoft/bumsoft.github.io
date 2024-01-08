@@ -1,0 +1,483 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>백준 1725 히스토그램 C&#43;&#43; - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="문제 풀러가기 세그먼트 트리를 사용하는 문제이다.
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 요세푸스 문제2 해답코드를 여러개 뜯어보면서 공부했다.
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.
+init():세그먼트 트리 초기화
+query():연산 수행
+update():필요한 경우 트리 업데이트
+위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.
+(문제 해설은 주석참고)
+#include &lt;bits/stdc&#43;&#43;." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="백준 1725 히스토그램 C&#43;&#43;">
+<meta itemprop="description" content="문제 풀러가기 세그먼트 트리를 사용하는 문제이다.
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 요세푸스 문제2 해답코드를 여러개 뜯어보면서 공부했다.
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.
+init():세그먼트 트리 초기화
+query():연산 수행
+update():필요한 경우 트리 업데이트
+위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.
+(문제 해설은 주석참고)
+#include &lt;bits/stdc&#43;&#43;."><meta itemprop="datePublished" content="2024-01-08T22:38:26+09:00" />
+<meta itemprop="dateModified" content="2024-01-08T22:38:26+09:00" />
+<meta itemprop="wordCount" content="434">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="백준 1725 히스토그램 C&#43;&#43;" />
+<meta property="og:description" content="문제 풀러가기 세그먼트 트리를 사용하는 문제이다.
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 요세푸스 문제2 해답코드를 여러개 뜯어보면서 공부했다.
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.
+init():세그먼트 트리 초기화
+query():연산 수행
+update():필요한 경우 트리 업데이트
+위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.
+(문제 해설은 주석참고)
+#include &lt;bits/stdc&#43;&#43;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/algorithm/ps/1725/" /><meta property="article:section" content="algorithm" />
+<meta property="article:published_time" content="2024-01-08T22:38:26+09:00" />
+<meta property="article:modified_time" content="2024-01-08T22:38:26+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="백준 1725 히스토그램 C&#43;&#43;"/>
+<meta name="twitter:description" content="문제 풀러가기 세그먼트 트리를 사용하는 문제이다.
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 요세푸스 문제2 해답코드를 여러개 뜯어보면서 공부했다.
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.
+init():세그먼트 트리 초기화
+query():연산 수행
+update():필요한 경우 트리 업데이트
+위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.
+(문제 해설은 주석참고)
+#include &lt;bits/stdc&#43;&#43;."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/algorithm/ps/1725/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">백준 1725 히스토그램 C&#43;&#43;</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 8, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p><a href="https://www.acmicpc.net/problem/1725">문제 풀러가기</a>
+<img src="/1725.png" alt="1725"></p>
+<p>세그먼트 트리를 사용하는 문제이다.<br>
+어려워보이는 자료구조라 나중으로 미루다가 결국 하게되었는데.. 유튜브에 마음에 드는 강의가 딱히 없어서 그냥 <a href="https://www.acmicpc.net/problem/1168">요세푸스 문제2</a> 해답코드를 여러개 뜯어보면서 공부했다.<br>
+요세푸스 문제나 구간합 문제 등 세그먼트 트리가 사용된 코드는 비슷한 부분이 많은 것 같은데 아직 완벽하게 이해하지는 못해서 몇 문제는 더 풀어보고 다뤄볼까 싶다.</p>
+<blockquote>
+<blockquote>
+<p>init():세그먼트 트리 초기화<br>
+query():연산 수행<br>
+update():필요한 경우 트리 업데이트</p>
+</blockquote>
+</blockquote>
+<p>위 세가지가 공통적으로 사용되고 동작방식도 비슷한 부분이 많다.</p>
+<p>(문제 해설은 주석참고)</p>
+<pre tabindex="0"><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+using ll = long long;
+#define INF 2&#39;100&#39;000&#39;000
+int N;
+int seg[1 &lt;&lt; 18];
+int arr[100&#39;001];
+
+int init(int node, int s, int e)
+{
+	if (e == s) return seg[node] = s; //인덱스를 저장
+
+	int mid = (s + e) / 2;
+
+	int left = init(node * 2, s, mid);
+	int right = init(node * 2 + 1, mid + 1, e);
+
+	if (arr[left] &lt;= arr[right]) // 왼쪽 구간의 높이가 더 작다면?
+	{
+		return seg[node] = left;
+	}
+	else
+	{
+		return seg[node] = right;
+	}
+	// =&gt; 부모노드는 두 개의 자식들의 구간 중 가장 작은 높이를 가진다.
+	
+	//리프의 부모노드는 low와 high를 받게되고, 그 중 작은 걸 값으로 가짐. =&gt; 반복
+}
+
+//구간 a~b에서 가장 작은 높이를 가지는 인덱스를 반환하는 query 
+//: 즉 k가 반환되었다면, a~b구간에서 가장 작은 높이는 k이므로 넓이는 (b-a+1)*k가 된다
+int query(int node, int s, int e, int a, int b)
+{
+	//범위를 벗어난 경우
+	if (b&lt;s || a&gt;e) return 0;
+
+	//범위에 속하는 경우 a &lt;= s &lt;= e &lt;= b 인 경우
+	if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node];
+
+	//그 외
+	int mid = (s + e) / 2;
+	
+	int left = query(node * 2, s, mid, a, b);
+	int right = query(node * 2 + 1, mid + 1, e, a, b);
+	return arr[left] &gt;= arr[right] ? right : left;
+}
+
+//최소높이의 인덱스를 기준으로 왼쪽/오른쪽 구간의 최대넓이를 구함.
+// 인덱스를 기준으로 왼쪽/오른쪽으로 정확히 나눠서 구하는 이유?
+// 인덱스를 포함하고 왼/오른쪽을 다 포함시킨다면, 어차피 인덱스에서 높이가 가장 작기에
+// 인덱스를 포함하는 구간에서는 무조건 1~N이 최대가 되기때문이다.
+int area_query(int a, int b)
+{
+	int min_index = query(1, 1, N, a, b);
+	int max_area = arr[min_index] * (b - a + 1);
+
+
+	if (min_index + 1 &lt;= b)
+	{
+		int max_left = area_query(min_index + 1, b);
+		max_area = max_area &gt; max_left ? max_area : max_left;
+	}
+
+	if (min_index - 1 &gt;= a)
+	{
+		int max_right = area_query(a, min_index - 1);
+		max_area = max_area &gt; max_right ? max_area : max_right;
+	}
+	
+	return max_area;
+}
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+	cin &gt;&gt; N;
+	for (int i = 1; i &lt;= N; i++)cin &gt;&gt; arr[i];
+	arr[0] = INF;
+	init(1, 1, N);
+	cout &lt;&lt; area_query(1, N);
+	return 0;
+}
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

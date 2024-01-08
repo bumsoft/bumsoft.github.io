@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bumcode.kr/algorithm/ps/</loc>
+    <lastmod>2024-01-08T22:38:26+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/algorithm/ps/1725/</loc>
+    <lastmod>2024-01-08T22:38:26+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bumcode.kr/writing/dir-c_lang/</loc>
     <lastmod>2023-12-06T12:10:53+09:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -9,11 +19,6 @@
   </url><url>
     <loc>https://bumcode.kr/writing/dir-c_lang/struct/</loc>
     <lastmod>2023-12-06T12:10:53+09:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://bumcode.kr/algorithm/ps/</loc>
-    <lastmod>2023-11-29T22:13:46+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
