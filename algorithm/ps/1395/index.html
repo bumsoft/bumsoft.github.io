@@ -1,0 +1,530 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>백준 1395 스위치 C&#43;&#43; - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="문제 풀러가기 이번에도 세그먼트 트리 문제다. 다만 그냥 세그먼트 트리를 사용할 경우, 구간 업데이트에 너무 많은 시간이 걸려 TLE 이므로 조금 다른 방식이 필요하다.
+세그먼트 트리를 이용한 TLE코드 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int N, M; int seg[100&#39;000 &lt;&lt; 2]; int update(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return seg[node]; if (s == e) return seg[node] = 1 - seg[node]; int mid = (s &#43; e) / 2; return seg[node] = update(node * 2, s, mid, a, b) &#43; update(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int query(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return 0; if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node]; int mid = (s &#43; e) / 2; return query(node * 2, s, mid, a, b) &#43; query(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int main() { ios_base::sync_with_stdio(false); cin." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="백준 1395 스위치 C&#43;&#43;">
+<meta itemprop="description" content="문제 풀러가기 이번에도 세그먼트 트리 문제다. 다만 그냥 세그먼트 트리를 사용할 경우, 구간 업데이트에 너무 많은 시간이 걸려 TLE 이므로 조금 다른 방식이 필요하다.
+세그먼트 트리를 이용한 TLE코드 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int N, M; int seg[100&#39;000 &lt;&lt; 2]; int update(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return seg[node]; if (s == e) return seg[node] = 1 - seg[node]; int mid = (s &#43; e) / 2; return seg[node] = update(node * 2, s, mid, a, b) &#43; update(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int query(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return 0; if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node]; int mid = (s &#43; e) / 2; return query(node * 2, s, mid, a, b) &#43; query(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int main() { ios_base::sync_with_stdio(false); cin."><meta itemprop="datePublished" content="2024-01-11T02:21:32+09:00" />
+<meta itemprop="dateModified" content="2024-01-11T02:21:32+09:00" />
+<meta itemprop="wordCount" content="762">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="백준 1395 스위치 C&#43;&#43;" />
+<meta property="og:description" content="문제 풀러가기 이번에도 세그먼트 트리 문제다. 다만 그냥 세그먼트 트리를 사용할 경우, 구간 업데이트에 너무 많은 시간이 걸려 TLE 이므로 조금 다른 방식이 필요하다.
+세그먼트 트리를 이용한 TLE코드 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int N, M; int seg[100&#39;000 &lt;&lt; 2]; int update(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return seg[node]; if (s == e) return seg[node] = 1 - seg[node]; int mid = (s &#43; e) / 2; return seg[node] = update(node * 2, s, mid, a, b) &#43; update(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int query(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return 0; if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node]; int mid = (s &#43; e) / 2; return query(node * 2, s, mid, a, b) &#43; query(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int main() { ios_base::sync_with_stdio(false); cin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/algorithm/ps/1395/" /><meta property="article:section" content="algorithm" />
+<meta property="article:published_time" content="2024-01-11T02:21:32+09:00" />
+<meta property="article:modified_time" content="2024-01-11T02:21:32+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="백준 1395 스위치 C&#43;&#43;"/>
+<meta name="twitter:description" content="문제 풀러가기 이번에도 세그먼트 트리 문제다. 다만 그냥 세그먼트 트리를 사용할 경우, 구간 업데이트에 너무 많은 시간이 걸려 TLE 이므로 조금 다른 방식이 필요하다.
+세그먼트 트리를 이용한 TLE코드 #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int N, M; int seg[100&#39;000 &lt;&lt; 2]; int update(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return seg[node]; if (s == e) return seg[node] = 1 - seg[node]; int mid = (s &#43; e) / 2; return seg[node] = update(node * 2, s, mid, a, b) &#43; update(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int query(int node, int s, int e, int a, int b) { if (b &lt; s || e &lt; a) return 0; if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node]; int mid = (s &#43; e) / 2; return query(node * 2, s, mid, a, b) &#43; query(node * 2 &#43; 1, mid &#43; 1, e, a, b); } int main() { ios_base::sync_with_stdio(false); cin."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/algorithm/ps/1395/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">백준 1395 스위치 C&#43;&#43;</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 11, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p><a href="https://www.acmicpc.net/problem/1395">문제 풀러가기</a>
+<img src="/1395.png" alt="1395"></p>
+<p>이번에도 세그먼트 트리 문제다. 다만 그냥 세그먼트 트리를 사용할 경우, 구간 업데이트에 너무 많은 시간이 걸려 <strong>TLE</strong> 이므로 조금 다른 방식이 필요하다.<br>
+<br/><br/></p>
+<ul>
+<li>세그먼트 트리를 이용한 TLE코드</li>
+</ul>
+<pre tabindex="0"><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int N, M;
+int seg[100&#39;000 &lt;&lt; 2];
+
+int update(int node, int s, int e, int a, int b)
+{
+	if (b &lt; s || e &lt; a) return seg[node];
+	if (s == e) return seg[node] = 1 - seg[node];
+	int mid = (s + e) / 2;
+	return seg[node] = update(node * 2, s, mid, a, b) + update(node * 2 + 1, mid + 1, e, a, b);
+}
+
+int query(int node, int s, int e, int a, int b)
+{
+	if (b &lt; s || e &lt; a) return 0;
+	if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node];
+	int mid = (s + e) / 2;
+	return query(node * 2, s, mid, a, b) + query(node * 2 + 1, mid + 1, e, a, b);
+}
+
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+	
+	cin &gt;&gt; N &gt;&gt; M;
+	int a, b, c;
+	for (int i = 0; i &lt; M; i++)
+	{
+		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+		if (a == 0)
+		{
+			update(1, 1, N, b, c);
+		}
+		else
+		{
+			cout &lt;&lt; query(1, 1, N, b, c) &lt;&lt; &#39;\n&#39;;
+		}
+	}
+	return 0;
+}
+</code></pre><p>시간초과를 해결하기 위해서는 구간 업데이트에 사용되는 시간을 줄여야하는데 이때 사용되는 것이 <strong>lazy propagation</strong>(느린전파) 이다.</p>
+<h2 id="lazy-propagation">lazy propagation</h2>
+<p>느리게 갱신되는 세그먼트 트리라고도 불린다. 말 그대로 트리의 갱신이 느리게 진행된다. TLE 코드에서는 업데이트 시 리프노드부터 루트노드까지 갱신이 되는 반면, lazy propagation을 사용한다면, 갱신이 한번에 이루어지지 않는다.<br>
+구간 단위로 업데이트가 필요한 경우 주로 사용된다.</p>
+<p>개념은 간단한데, 현재 노드가 갱신하려는 구간에 포함된다면, 해당 노드만 업데이트한 뒤 종료되며 자식노드의 갱신은 바로 이루어지지 않는다.<br>
+자식노드의 갱신은 나중에 노드의 정보가 필요해 그 노드에 방문할 때 처리하는데, 이를 위해 lazy배열에 갱신에 대한 정보를 저장해두어야한다.</p>
+<p>만약 느리게 갱신되는 세그먼트 트리를 만들었다면, 앞으로의 모든 노드 방문에서는 해당노드에 대한 lazy값이 있는지의 여부를 확인해야한다.<br>
+이는 업데이트 뿐만 아니라, query를 수행할 때도 확인해줘야한다.<br>
+<br/><br/></p>
+<p>문제로 넘어가보자.<br>
+세그먼트트리와 느린전파에 대해 알고 문제를 보면 어려운 문제는 아니다.<br>
+핵심은 <strong>노드에 무엇을 저장</strong>할 지, <strong>lazy배열에 어떤 값을 넘길지</strong>만 생각해내면 된다.</p>
+<p>노드에는 해당 구간에 켜져있는 전구의 개수를 저장하면 된다.<br>
+초기상태는 모두 꺼진 0이라 세그먼트 트리의 초기화는 필요가 없다.</p>
+<p>해줘야하는 작업은 전구상태의 반전과 켜져있는 전구의 개수를 구하는 건데</p>
+<p>켜져있는 전구의 개수는 노드에 켜진 전구의 개수를 저장하기에 해결되었고  반전시키는 작업만 해주면 된다.<br>
+<br/></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>(구간의 총 전구 개수) - (구간에 켜져있는 전구 개수)<br>
+=&gt; end - start + 1 - seg[node]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>lazy배열에 전달해야하는 값은 무엇일까?<br>
+반전을 시켰다면 값을 1 증가시키기만 하면 된다.<br>
+만약 두번 반전 시킨다면 1을 더 증가시켜 2인데, 이는 원래상태니까 lazy의 값이 짝수라면 유지, 홀수라면 반전시키면 된다.</p>
+<pre tabindex="0"><code>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// lazy propagation
+int N, M;
+int seg[100&#39;000 &lt;&lt; 2];
+int lazy[100&#39;000 &lt;&lt; 2];
+
+void update(int node, int s, int e, int a, int b)
+{
+	if (lazy[node] != 0)//자식 전파
+	{
+		if (lazy[node] % 2 == 1) //홀수면
+		{
+			seg[node] = (e - s + 1) - seg[node];
+		}
+		if (s != e)
+		{
+			lazy[node * 2] += lazy[node];
+			lazy[node * 2 + 1] += lazy[node];
+		}
+		lazy[node] = 0;
+	}
+	if (b &lt; s || e &lt; a) return;
+	if (a &lt;= s &amp;&amp; e &lt;= b)
+	{
+		seg[node] = (e - s + 1) - seg[node];
+		if (s != e)
+		{
+			lazy[node * 2]++;
+			lazy[node * 2 + 1]++;
+		}
+		return;
+	}
+	int mid = (s + e) / 2;
+	update(node * 2, s, mid, a, b);
+	update(node * 2 + 1, mid + 1, e, a, b);
+	seg[node] = seg[node * 2] + seg[node * 2 + 1];
+}
+
+int query(int node, int s, int e, int a, int b)
+{
+	if (lazy[node] != 0)//자식 전파
+	{
+		if (lazy[node] % 2 == 1) //홀수면
+		{
+			seg[node] = (e - s + 1) - seg[node];
+		}
+		if (s != e)
+		{
+			lazy[node * 2] += lazy[node];
+			lazy[node * 2 + 1] += lazy[node];
+		}
+		lazy[node] = 0;
+	}
+	if (b &lt; s || e &lt; a) return 0;
+	if (a &lt;= s &amp;&amp; e &lt;= b) return seg[node];
+	int mid = (s + e) / 2;
+	return query(node * 2, s, mid, a, b) + query(node * 2 + 1, mid + 1, e, a, b);
+}
+
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+	
+	cin &gt;&gt; N &gt;&gt; M;
+	int a, b, c;
+	for (int i = 0; i &lt; M; i++)
+	{
+		cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+		if (a == 0)
+		{
+			update(1, 1, N, b, c);
+		}
+		else
+		{
+			cout &lt;&lt; query(1, 1, N, b, c) &lt;&lt; &#39;\n&#39;;
+		}
+	}
+	return 0;
+}
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/algorithm/ps/1725/"
+      ><span>백준 1725 히스토그램 C&#43;&#43;</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

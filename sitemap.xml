@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bumcode.kr/algorithm/ps/</loc>
-    <lastmod>2024-01-08T22:38:26+09:00</lastmod>
+    <lastmod>2024-01-11T02:21:32+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/algorithm/ps/1395/</loc>
+    <lastmod>2024-01-11T02:21:32+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
