@@ -314,6 +314,9 @@ if (!doNotTrack) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js/bignumber.min.js"></script>
+
     <title>간단한 피보나치 계산기</title>
     <style>
         body {
@@ -325,7 +328,20 @@ if (!doNotTrack) {
         input {
             padding: 10px;
             margin: 5px;
+            background-color: #c1c416;
         }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
     </style>
 </head>
 <body>
@@ -337,22 +353,22 @@ if (!doNotTrack) {
     <button onclick="fib()">구하기</button>
 
     <p id="result">결과: </p>
-
     <script>
         function fib() {
-                var N = document.getElementById("N").value;
-                let a=0,b=1;
-                let result;
-                for(let i=2;i<=parseFloat(N);i++)
-                {
-                    let temp=b;
-                    b = a+b;
-                    a=temp;
-                }
-                result = N === 0 ? a : b;
-            document.getElementById("result").innerText = "결과: " + result;
+            var N = document.getElementById("N").value;
+            let a = new BigNumber(0);
+            let b = new BigNumber(1);
+            let result;
+            for (let i = 2; i <= parseFloat(N); i++) {
+                let temp = b;
+                b = a.plus(b);
+                a = temp;
+            }
+            result = N === '0' ? a : b;
+            document.getElementById("result").innerText = "결과: " + result.toString();
         }
     </script>
+
 </body>
 </html></section>
 
