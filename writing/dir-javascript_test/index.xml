@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Nov 2023 00:19:00 +0900</lastBuildDate><atom:link href="https://bumcode.kr/writing/dir-javascript_test/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>간단한 피보나치 계산기</title>
+      <title>피보나치 계산기</title>
       <link>https://bumcode.kr/writing/dir-javascript_test/fib/</link>
       <pubDate>Wed, 22 Nov 2023 00:19:00 +0900</pubDate>
       
       <guid>https://bumcode.kr/writing/dir-javascript_test/fib/</guid>
-      <description>&lt;!DOCTYPE html&gt;간단한 피보나치 계산기구하려는 fib(N)의 N:구하기결과: </description>
+      <description>&lt;!DOCTYPE html&gt;피보나치 계산기구하려는 fib(N)의 N:구하기결과: </description>
     </item>
     
     <item>
