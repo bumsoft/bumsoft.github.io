@@ -50,7 +50,7 @@
   />
 
   
-  <title>sql찍먹 - BumCode</title>
+  <title>sql입문기 - BumCode</title>
 
   
   <meta name="theme-color" />
@@ -59,10 +59,11 @@
   
   
   
-  <meta name="description" content="그냥 메모장 복붙
-show databases; : db목록을 보여줌
-use sample; : sample db를 선택함
-DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조
+  <meta name="description" content="&lsquo;SQL 첫걸음&rsquo; 책으로 공부하며 작성한 메모장을 복붙한 글로
+어느정도 기반이 잡힌 뒤 정리하겠습니다.
+MySQL DBMS기반
+[2024.02.19]
+&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
 Field : 열이름
 Type : 열의 자료형
 -INTEGER 정수(소수점x)
@@ -71,9 +72,7 @@ Type : 열의 자료형
 -DATE 연월일
 -TIME 시분초
 Null : Null값 허용여부
-Key : 해당열이 Key로 지정되어있는지.
-Default : 생략시 기본값.(NULL)
-SELECT * FROM a; : a테이블의 *(모든)열." />
+Key : 해당열이 Key로 지정되어있는지." />
   <meta name="author" content="신진범" />
   
 
@@ -144,11 +143,12 @@ if (!doNotTrack) {
 </script>
 
   
-  <meta itemprop="name" content="sql찍먹">
-<meta itemprop="description" content="그냥 메모장 복붙
-show databases; : db목록을 보여줌
-use sample; : sample db를 선택함
-DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조
+  <meta itemprop="name" content="sql입문기">
+<meta itemprop="description" content="&lsquo;SQL 첫걸음&rsquo; 책으로 공부하며 작성한 메모장을 복붙한 글로
+어느정도 기반이 잡힌 뒤 정리하겠습니다.
+MySQL DBMS기반
+[2024.02.19]
+&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
 Field : 열이름
 Type : 열의 자료형
 -INTEGER 정수(소수점x)
@@ -157,18 +157,17 @@ Type : 열의 자료형
 -DATE 연월일
 -TIME 시분초
 Null : Null값 허용여부
-Key : 해당열이 Key로 지정되어있는지.
-Default : 생략시 기본값.(NULL)
-SELECT * FROM a; : a테이블의 *(모든)열."><meta itemprop="datePublished" content="2024-02-19T23:34:29+09:00" />
+Key : 해당열이 Key로 지정되어있는지."><meta itemprop="datePublished" content="2024-02-19T23:34:29+09:00" />
 <meta itemprop="dateModified" content="2024-02-19T23:34:29+09:00" />
-<meta itemprop="wordCount" content="187">
+<meta itemprop="wordCount" content="587">
 <meta itemprop="keywords" content="" />
   
-  <meta property="og:title" content="sql찍먹" />
-<meta property="og:description" content="그냥 메모장 복붙
-show databases; : db목록을 보여줌
-use sample; : sample db를 선택함
-DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조
+  <meta property="og:title" content="sql입문기" />
+<meta property="og:description" content="&lsquo;SQL 첫걸음&rsquo; 책으로 공부하며 작성한 메모장을 복붙한 글로
+어느정도 기반이 잡힌 뒤 정리하겠습니다.
+MySQL DBMS기반
+[2024.02.19]
+&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
 Field : 열이름
 Type : 열의 자료형
 -INTEGER 정수(소수점x)
@@ -177,9 +176,7 @@ Type : 열의 자료형
 -DATE 연월일
 -TIME 시분초
 Null : Null값 허용여부
-Key : 해당열이 Key로 지정되어있는지.
-Default : 생략시 기본값.(NULL)
-SELECT * FROM a; : a테이블의 *(모든)열." />
+Key : 해당열이 Key로 지정되어있는지." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bumcode.kr/writing/dir-sql/sql/" /><meta property="article:section" content="writing" />
 <meta property="article:published_time" content="2024-02-19T23:34:29+09:00" />
@@ -187,11 +184,12 @@ SELECT * FROM a; : a테이블의 *(모든)열." />
 
   
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="sql찍먹"/>
-<meta name="twitter:description" content="그냥 메모장 복붙
-show databases; : db목록을 보여줌
-use sample; : sample db를 선택함
-DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조
+<meta name="twitter:title" content="sql입문기"/>
+<meta name="twitter:description" content="&lsquo;SQL 첫걸음&rsquo; 책으로 공부하며 작성한 메모장을 복붙한 글로
+어느정도 기반이 잡힌 뒤 정리하겠습니다.
+MySQL DBMS기반
+[2024.02.19]
+&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
 Field : 열이름
 Type : 열의 자료형
 -INTEGER 정수(소수점x)
@@ -200,9 +198,7 @@ Type : 열의 자료형
 -DATE 연월일
 -TIME 시분초
 Null : Null값 허용여부
-Key : 해당열이 Key로 지정되어있는지.
-Default : 생략시 기본값.(NULL)
-SELECT * FROM a; : a테이블의 *(모든)열."/>
+Key : 해당열이 Key로 지정되어있는지."/>
 
   
   
@@ -350,7 +346,7 @@ SELECT * FROM a; : a테이블의 *(모든)열."/>
 
 <article>
   <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">sql찍먹</h1>
+    <h1 class="!my-0 pb-2.5">sql입문기</h1>
 
     
     <div class="text-sm antialiased opacity-60">
@@ -364,61 +360,113 @@ SELECT * FROM a; : a테이블의 *(모든)열."/>
     
   </header>
 
-  <section><p>그냥 메모장 복붙</p>
-<blockquote>
-<p>show databases; : db목록을 보여줌</p>
-</blockquote>
-<blockquote>
-<p>use sample; : sample db를 선택함</p>
-</blockquote>
-<blockquote>
-<p>DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조<br>
-Field : 열이름<br>
-Type : 열의 자료형<br>
+  <section><p><strong>&lsquo;SQL 첫걸음&rsquo;</strong> 책으로 공부하며 작성한 메모장을 복붙한 글로<br>
+어느정도 기반이 잡힌 뒤 정리하겠습니다.<br>
+<strong>MySQL DBMS기반</strong></p>
+<p>[2024.02.19]</p>
+<pre tabindex="0"><code>&gt;show databases; : db목록을 보여줌  
+
+&gt;use sample; : sample db를 선택함  
+
+&gt;DESC sample21;  : sample21의 테이블구조가 나옴(sql명령x) 
+            -&gt; 테이블구조참조(describe)  
+</code></pre><p><em>테이블구조</em><br>
+<strong>Field</strong> : 열이름<br>
+<strong>Type</strong> : 열의 자료형<br>
 -INTEGER 정수(소수점x)<br>
 -CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움<br>
 -VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장<br>
 -DATE 연월일<br>
 -TIME 시분초<br>
-Null : Null값 허용여부<br>
-Key : 해당열이 Key로 지정되어있는지.<br>
-Default : 생략시 기본값.(NULL)</p>
-</blockquote>
-<blockquote>
-<p>SELECT * FROM a; : a테이블의 *(모든)열.<br>
-SELECT name FROM a : a테이블의 이름 열<br>
-SELECT 열1, 열2 &hellip; FROM 테이블명 : 결과는 지정한 순서대로 표시</p>
-</blockquote>
-<p>SECLECT구 -&gt; FROM구 -&gt; WHERE구 (WHERE구는 생략시 모든 행)<br>
+<strong>Null</strong> : Null값 허용여부<br>
+<strong>Key</strong> : 해당열이 Key로 지정되어있는지.<br>
+<strong>Default</strong> : 생략시 기본값.(NULL)</p>
+<pre tabindex="0"><code>&gt;SELECT * FROM a; : a테이블의 *(모든)열.  
+&gt;SELECT name FROM a : a테이블의 이름 열  
+&gt;SELECT 열1, 열2 ... FROM 테이블명 : 결과는 지정한 순서대로 표시  
+</code></pre><p>SECLECT구 -&gt; FROM구 -&gt; WHERE구 (WHERE구는 생략시 모든 행)<br>
 ex)<br>
 SELECT * FROM a; : 테이블a의 모든 열에서 모든 행 추출<br>
 SELECT * FROM a WHERE no=2; : 테이블a의 no열이값 2인 &lsquo;행&rsquo;의 모든열 추출<br>
 SELECT name FROM sample21 WHERE no=2; : 테이블sample21의 no열값이 2인 &lsquo;행&rsquo;의 name열만 추출<br>
 SELECT no FROM sample21 WHERE name=&lsquo;홍길동&rsquo;; : 테이블sample21의 name열 값이 &ldquo;홍길동&quot;인 행의 no열만 추출.</p>
-<p>[조건연산자]</p>
+<h2 id="조건연산자">[조건연산자]</h2>
 <ul>
 <li>= : ==</li>
 <li>&lt;&gt; : !=</li>
-<li>
-<blockquote>
-</blockquote>
-</li>
+<li>&gt;</li>
 <li>&lt;</li>
-<li>
-<blockquote>
-<p>=</p>
-</blockquote>
-</li>
+<li>&gt;=</li>
 <li>&lt;=</li>
 </ul>
 <p>t = 1;<br>
 t = &lsquo;문자열&rsquo;;<br>
 t = &lsquo;2024-01-01&rsquo;;<br>
 t = &lsquo;23:29:00&rsquo;;</p>
-<p>NULL값 검색 =NULL이 아닌, IS NULL로 검색</p>
-<blockquote>
-<p>SELECT * FROM sample21 WHERE birthday IS NULL;</p>
-</blockquote>
+<h2 id="null값-검색">[NULL값 검색]</h2>
+<p>=NULL이 아닌, IS NULL로 검색</p>
+<pre tabindex="0"><code>&gt;SELECT * FROM sample21 WHERE birthday IS NULL;  
+</code></pre><p></br></br>
+[2024.02.23]</p>
+<h2 id="패턴매칭-검색-like">[패턴매칭 검색] LIKE</h2>
+<p>간단한 패턴매칭이라면 LIKE<br>
+복잡한 매턴매칭이라면 정규표현식(Regular Expression)사용</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM sample25 WHERE text1 LIKE &#39;ㅡㅡ&#39;;  
+
+&gt; &#39;%test&#39; : test앞에만 공백을 포함한 문자가 있는 것  
+&gt; &#39;%test%&#39; : test 앞 뒤로 공백을 포함한 문자가 있는 것  
+&gt; &#39;test%&#39; : test 뒤에만 공백을 포함한 문자가 있는것  
+
+&gt; &#39;%&#39;를 찾고자 할 경우 : \%를 사용 ex. &#39;%\%&#39;   &#39;\%%&#39;  ...  
+
+&gt; &#39;를 찾고자 할 경우 : &#39;&#39;&#39;&#39;;  ( &#39;  &#39;&#39;   &#39;) ex. it&#39;s =&gt; &#39;it&#39;&#39;s&#39;;  
+</code></pre><h2 id="정렬-order-by">[정렬] ORDER BY</h2>
+<p>클라이언트로 행 순서를 바꾸어 반환하는 것뿐, 원본 데이터의 행 순서를 변경하지는 않는다.<br>
+=&gt; SELECT는 참조만 할 뿐 변경하지 않음</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM oo ORDER BY age(열이름);  
+</code></pre><p>검색결과의 행 순서를 정렬해서 반환함<br>
+ORDER BY생략시 DB에 저장된 순서로 반환</p>
+<p>ORDER BY (열이름) DESC;  : 내림차순(descending)<br>
+ORDER BY (열이름) ASC;  : 오름차순(ascending)(생략가능, 다만 dbms마다 다를 수 있으니 주의)</p>
+<p>a열이 같은경우 b열순으로 정렬하고 싶음<br>
+=&gt; ORDER BY a, b; : a오름차순 + b오름차순</p>
+<p>NULL 값이 저장된 열의 정렬<br>
+=&gt; 가장 크거나 가장 작은 값으로 취급함(제품마다 다름)<br>
+MySQL의 경우 가장 작은 값으로 취급.</p>
+<h2 id="결과-행-제한-limit구">[결과 행 제한] LIMIT구</h2>
+<p>MySQL, PostgreSQL 문법임</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM table LIMIT 3; : 최대 3개행 출력.  
+</code></pre><p>OFFSET</p>
+<pre tabindex="0"><code>&gt; 1페이지 : LIMIT 5 OFFSET 0; =&gt; 0번부터 5개  
+&gt; 2페이지 : LIMIT 5 OFFSET 5 =&gt; 5번부터 5개  
+(배열인덱스처럼 0부터 시작) 즉, (시작행 -1)로 표기하기  
+</code></pre><h2 id="서버-내부처리-순서">[서버 내부처리 순서]</h2>
+<p>WHERE -&gt; SELECT -&gt; ORDER BY</p>
+<h2 id="select구에서-연산">[SELECT구에서 연산]</h2>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity FROM table; : table을 출력하고,  
+ price열과 quantity열을 곱한 열을   price*quantity라는 이름의 열로 옆에 출력  
+
+열명을 재지정하고싶은 경우, price*quantity AS newName 으로 재지정 가능  
+(AS생략가능)  
+&gt; SELECT *, price*quantity AS amount FROM table;  
+</code></pre><h2 id="where구에서-연산">[WHERE구에서 연산]</h2>
+<pre tabindex="0"><code>-price*quantity &gt;= 1000 인 행을 출력하고자 할 때  
+&gt; SELECT *, price*quantity AS amount FROM table WHERE amount &gt;= 1000; ERROR발생  
+</code></pre><p><strong>=&gt; 서버 내부처리 순서때문임 :</strong>
+표준은 아니나 대부분의 데이터베이스는  <strong>WHERE구 -&gt; SELECT구</strong> 순서로 처리함<br>
+그렇기에 WHERE amount에서 amount를 찾을 수 없음</p>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity AS amount FROM table WHERE price*quantity &gt;= 1000;  
+</code></pre><h2 id="order-by구에서-연산">[ORDER BY구에서 연산]</h2>
+<p>ORDER BY구는 SELECT구 보다 나중에 처리되므로 별명(alias)를 사용할 수 있음</p>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity AS amount FROM table ORDER BY amount DESC;  
+</code></pre><h2 id="null값의-연산">[NULL값의 연산]</h2>
+<p>NULL과 연산시 결과는 모두 NULL이 됨<br>
+ex) NULL+1 =&gt; NULL,  1/NULL =&gt; NULL  division by zero발생X</p>
+<h2 id="함수">[함수]</h2>
+<p>MOD(a,b) : a%b<br>
+ROUND(a) : a 소수점 첫째자리 기준 반올림<br>
+ROUND(a,b) : a 소수점 b+1자리에서 반올림, b가 음수일경우 10단위 반올림도 가능 <br>
+TRUNCATE() : 버림</p>
 </section>
 
   
