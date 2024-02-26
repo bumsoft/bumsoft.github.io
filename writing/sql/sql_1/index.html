@@ -1,0 +1,611 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>SQL 1 - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
+Field : 열이름
+Type : 열의 자료형
+-INTEGER 정수(소수점x)
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
+-DATE 연월일
+-TIME 시분초
+Null : Null값 허용여부
+Key : 해당열이 Key로 지정되어있는지.
+Default : 생략시 기본값.(NULL)
+&gt;SELECT * FROM a; : a테이블의 *(모든)열. &gt;SELECT name FROM a : a테이블의 이름 열 &gt;SELECT 열1, 열2 ." />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="SQL 1">
+<meta itemprop="description" content="&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
+Field : 열이름
+Type : 열의 자료형
+-INTEGER 정수(소수점x)
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
+-DATE 연월일
+-TIME 시분초
+Null : Null값 허용여부
+Key : 해당열이 Key로 지정되어있는지.
+Default : 생략시 기본값.(NULL)
+&gt;SELECT * FROM a; : a테이블의 *(모든)열. &gt;SELECT name FROM a : a테이블의 이름 열 &gt;SELECT 열1, 열2 ."><meta itemprop="datePublished" content="2024-02-19T23:34:29+09:00" />
+<meta itemprop="dateModified" content="2024-02-19T23:34:29+09:00" />
+<meta itemprop="wordCount" content="1011">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="SQL 1" />
+<meta property="og:description" content="&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
+Field : 열이름
+Type : 열의 자료형
+-INTEGER 정수(소수점x)
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
+-DATE 연월일
+-TIME 시분초
+Null : Null값 허용여부
+Key : 해당열이 Key로 지정되어있는지.
+Default : 생략시 기본값.(NULL)
+&gt;SELECT * FROM a; : a테이블의 *(모든)열. &gt;SELECT name FROM a : a테이블의 이름 열 &gt;SELECT 열1, 열2 ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/writing/sql/sql_1/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2024-02-19T23:34:29+09:00" />
+<meta property="article:modified_time" content="2024-02-19T23:34:29+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL 1"/>
+<meta name="twitter:description" content="&gt;show databases; : db목록을 보여줌 &gt;use sample; : sample db를 선택함 &gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&gt; 테이블구조참조(describe) 테이블구조
+Field : 열이름
+Type : 열의 자료형
+-INTEGER 정수(소수점x)
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
+-DATE 연월일
+-TIME 시분초
+Null : Null값 허용여부
+Key : 해당열이 Key로 지정되어있는지.
+Default : 생략시 기본값.(NULL)
+&gt;SELECT * FROM a; : a테이블의 *(모든)열. &gt;SELECT name FROM a : a테이블의 이름 열 &gt;SELECT 열1, 열2 ."/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/writing/sql/sql_1/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">SQL 1</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 19, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><pre tabindex="0"><code>&gt;show databases; : db목록을 보여줌  
+
+&gt;use sample; : sample db를 선택함  
+
+&gt;DESC sample21;  : sample21의 테이블구조가 나옴(sql명령x) 
+            -&gt; 테이블구조참조(describe)  
+</code></pre><p><em>테이블구조</em><br>
+<strong>Field</strong> : 열이름<br>
+<strong>Type</strong> : 열의 자료형<br>
+-INTEGER 정수(소수점x)<br>
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움<br>
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장<br>
+-DATE 연월일<br>
+-TIME 시분초<br>
+<strong>Null</strong> : Null값 허용여부<br>
+<strong>Key</strong> : 해당열이 Key로 지정되어있는지.<br>
+<strong>Default</strong> : 생략시 기본값.(NULL)</p>
+<pre tabindex="0"><code>&gt;SELECT * FROM a; : a테이블의 *(모든)열.  
+&gt;SELECT name FROM a : a테이블의 이름 열  
+&gt;SELECT 열1, 열2 ... FROM 테이블명 : 결과는 지정한 순서대로 표시  
+</code></pre><p>SECLECT구 -&gt; FROM구 -&gt; WHERE구 (WHERE구는 생략시 모든 행)<br>
+ex)<br>
+SELECT * FROM a; : 테이블a의 모든 열에서 모든 행 추출<br>
+SELECT * FROM a WHERE no=2; : 테이블a의 no열이값 2인 &lsquo;행&rsquo;의 모든열 추출<br>
+SELECT name FROM sample21 WHERE no=2; : 테이블sample21의 no열값이 2인 &lsquo;행&rsquo;의 name열만 추출<br>
+SELECT no FROM sample21 WHERE name=&lsquo;홍길동&rsquo;; : 테이블sample21의 name열 값이 &ldquo;홍길동&quot;인 행의 no열만 추출.</p>
+<h2 id="조건연산자">[조건연산자]</h2>
+<ul>
+<li>= : ==</li>
+<li>&lt;&gt; : !=</li>
+<li>&gt;</li>
+<li>&lt;</li>
+<li>&gt;=</li>
+<li>&lt;=</li>
+</ul>
+<p>t = 1;<br>
+t = &lsquo;문자열&rsquo;;<br>
+t = &lsquo;2024-01-01&rsquo;;<br>
+t = &lsquo;23:29:00&rsquo;;</p>
+<h2 id="null값-검색">[NULL값 검색]</h2>
+<p>=NULL이 아닌, IS NULL로 검색</p>
+<pre tabindex="0"><code>&gt;SELECT * FROM sample21 WHERE birthday IS NULL;  
+</code></pre><p></br></br></p>
+<h2 id="패턴매칭-검색-like">[패턴매칭 검색] LIKE</h2>
+<p>간단한 패턴매칭이라면 LIKE<br>
+복잡한 매턴매칭이라면 정규표현식(Regular Expression)사용</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM sample25 WHERE text1 LIKE &#39;ㅡㅡ&#39;;  
+
+&gt; &#39;%test&#39; : test앞에만 공백을 포함한 문자가 있는 것  
+&gt; &#39;%test%&#39; : test 앞 뒤로 공백을 포함한 문자가 있는 것  
+&gt; &#39;test%&#39; : test 뒤에만 공백을 포함한 문자가 있는것  
+
+&gt; &#39;%&#39;를 찾고자 할 경우 : \%를 사용 ex. &#39;%\%&#39;   &#39;\%%&#39;  ...  
+
+&gt; &#39;를 찾고자 할 경우 : &#39;&#39;&#39;&#39;;  ( &#39;  &#39;&#39;   &#39;) ex. it&#39;s =&gt; &#39;it&#39;&#39;s&#39;;  
+</code></pre><h2 id="정렬-order-by">[정렬] ORDER BY</h2>
+<p>클라이언트로 행 순서를 바꾸어 반환하는 것뿐, 원본 데이터의 행 순서를 변경하지는 않는다.<br>
+=&gt; SELECT는 참조만 할 뿐 변경하지 않음</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM oo ORDER BY age(열이름);  
+</code></pre><p>검색결과의 행 순서를 정렬해서 반환함<br>
+ORDER BY생략시 DB에 저장된 순서로 반환</p>
+<p>ORDER BY (열이름) DESC;  : 내림차순(descending)<br>
+ORDER BY (열이름) ASC;  : 오름차순(ascending)(생략가능, 다만 dbms마다 다를 수 있으니 주의)</p>
+<p>a열이 같은경우 b열순으로 정렬하고 싶음<br>
+=&gt; ORDER BY a, b; : a오름차순 + b오름차순</p>
+<p>NULL 값이 저장된 열의 정렬<br>
+=&gt; 가장 크거나 가장 작은 값으로 취급함(제품마다 다름)<br>
+MySQL의 경우 가장 작은 값으로 취급.</p>
+<h2 id="결과-행-제한-limit구">[결과 행 제한] LIMIT구</h2>
+<p>MySQL, PostgreSQL 문법임</p>
+<pre tabindex="0"><code>&gt; SELECT * FROM table LIMIT 3; : 최대 3개행 출력.  
+</code></pre><p>OFFSET</p>
+<pre tabindex="0"><code>&gt; 1페이지 : LIMIT 5 OFFSET 0; =&gt; 0번부터 5개  
+&gt; 2페이지 : LIMIT 5 OFFSET 5 =&gt; 5번부터 5개  
+(배열인덱스처럼 0부터 시작) 즉, (시작행 -1)로 표기하기  
+</code></pre><h2 id="서버-내부처리-순서">[서버 내부처리 순서]</h2>
+<p>WHERE -&gt; SELECT -&gt; ORDER BY</p>
+<h2 id="select구에서-연산">[SELECT구에서 연산]</h2>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity FROM table; : table을 출력하고,  
+ price열과 quantity열을 곱한 열을   price*quantity라는 이름의 열로 옆에 출력  
+
+열명을 재지정하고싶은 경우, price*quantity AS newName 으로 재지정 가능  
+(AS생략가능)  
+&gt; SELECT *, price*quantity AS amount FROM table;  
+</code></pre><h2 id="where구에서-연산">[WHERE구에서 연산]</h2>
+<pre tabindex="0"><code>-price*quantity &gt;= 1000 인 행을 출력하고자 할 때  
+&gt; SELECT *, price*quantity AS amount FROM table WHERE amount &gt;= 1000; ERROR발생  
+</code></pre><p><strong>=&gt; 서버 내부처리 순서때문임 :</strong>
+표준은 아니나 대부분의 데이터베이스는  <strong>WHERE구 -&gt; SELECT구</strong> 순서로 처리함<br>
+그렇기에 WHERE amount에서 amount를 찾을 수 없음</p>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity AS amount FROM table WHERE price*quantity &gt;= 1000;  
+</code></pre><h2 id="order-by구에서-연산">[ORDER BY구에서 연산]</h2>
+<p>ORDER BY구는 SELECT구 보다 나중에 처리되므로 별명(alias)를 사용할 수 있음</p>
+<pre tabindex="0"><code>&gt; SELECT *, price*quantity AS amount FROM table ORDER BY amount DESC;  
+</code></pre><h2 id="null값의-연산">[NULL값의 연산]</h2>
+<p>NULL과 연산시 결과는 모두 NULL이 됨<br>
+ex) NULL+1 =&gt; NULL,  1/NULL =&gt; NULL  division by zero발생X</p>
+<h2 id="함수">[함수]</h2>
+<p>MOD(a,b) : a%b<br>
+ROUND(a) : a 소수점 첫째자리 기준 반올림<br>
+ROUND(a,b) : a 소수점 b+1자리에서 반올림, b가 음수일경우 10단위 반올림도 가능 <br>
+TRUNCATE() : 버림</p>
+<h2 id="문자열-연산">[문자열 연산]</h2>
+<h3 id="-문자열-결합">-문자열 결합</h3>
+<p>MySQL : CONCAT(a,b)<br>
+SQL Server : +<br>
+Oracle, DB2, PostgreSQL : ||</p>
+<p>price=10 : int<br>
+quantity=10 : int<br>
+unit=개 : varchar</p>
+<pre tabindex="0"><code>&gt; SELECT CONCAT(quantity,unit) FROM table;   =&gt; 10개
+&gt; SELECT CONCAT(price,quantity) FROM table; =&gt; 1010;
+</code></pre><h3 id="-문자열-추출">-문자열 추출</h3>
+<p>ex) date를 YYYYMMDD와 같이 문자열로 저장하는 경우 해당 데이터에서 년월일을 따로 추출하고싶을 때 사용<br>
+<strong>SUBSTRING(&lsquo;string&rsquo;,i,l)</strong> : string의 i번째부터 길이 l만큼 추출</p>
+<pre tabindex="0"><code>mysql&gt; SELECT SUBSTRING(&#39;12345&#39;,1,3);
++------------------------+
+| SUBSTRING(&#39;12345&#39;,1,3) |
++------------------------+
+| 123                    |
++------------------------+
+</code></pre><h3 id="-앞뒤중간x-스페이스-제거">-앞뒤(중간x) 스페이스 제거</h3>
+<p>ex)자료형이 CHAR인 경우 남은 공간은 공백으로 채워지는데 이를 제거하는데 유용</p>
+<p>TRIM(&lsquo;string&rsquo;)<br>
+TRIM(&lsquo;ABC   &lsquo;) =&gt; &lsquo;ABC&rsquo;<br>
+TRIM(&rsquo; A BC&rsquo;) =&gt; &lsquo;A BC&rsquo;<br>
+TRIM(&rsquo;  ABC  &lsquo;) =&gt; &lsquo;ABC&rsquo;</p>
+<h3 id="-문자열-길이">-문자열 길이</h3>
+<p><strong>CHARACTER_LENGTH()</strong> (CHAR_LENGTH())</p>
+<p>OCTET_LENGTH() : 문자열의 길이를 바이트 단위로 반환<br>
+<em>!주의할점!</em><br>
+인코드방식, &lsquo;문자세트&rsquo;에 따라 한 문자당 바이트 수가 달라질 수 있음<br>
+아래 두 인코드방식에서 ASCII문자는 1바이트로 같지만, 한글은<br>
+EUC-KR의 경우 1문자당 2바이트<br>
+UTF-8의 경우 1문자당 3바이트를 차지<br>
+이런 이유로 문자단위가 아닌 바이트단위로 조작할 경우 주의가 필요함.</p>
+<h2 id="날짜-연산">[날짜 연산]</h2>
+<p>날짜, 시간 저장은 제품에 따라 다름<br>
+날짜+시간 자료형, DATE TIME DATETIME과 같이 세분화해 지원하기도 함</p>
+<p>날짜나 시간 데이터는 사칙연산이 가능<br>
+그 결과값으로 동일유형의 데이터를 반환하기도 하며, 기간형(interval) 데이터를 반환하기도 함<br>
+ex) 10일간, 10분 ..</p>
+<p><strong>-시스템 날짜</strong> : 하드웨어 상 시계로부터 실시간으로 얻을 수 있는 일시적 데이터</p>
+<p>SQL표준함수 <strong>CURRENT_TIMESTAMP</strong>(파라미터x)</p>
+<pre tabindex="0"><code>mysql&gt; SELECT CURRENT_TIMESTAMP;
++---------------------+
+| CURRENT_TIMESTAMP   |
++---------------------+
+| 2024-02-24 23:17:37 |
++---------------------+
+</code></pre><p><strong>-날짜 덧셈</strong></p>
+<pre tabindex="0"><code>mysql&gt; SELECT CURRENT_TIMESTAMP + INTERVAL 1 DAY; : 현재 + 1일후
+
+-날짜형 간의 뺄셈 : 두 날짜 사이의 차이
+mysql&gt; SELECT DATEDIFF(&#39;2024-01-01&#39;,&#39;2024-02-24&#39;);
++-------------------------------------+
+| DATEDIFF(&#39;2024-01-01&#39;,&#39;2024-02-24&#39;) |
++-------------------------------------+
+|                                 -54 |
++-------------------------------------+
+ORACLE의 경우 &#39;2024-01-01&#39; - &#39;2024-02-24&#39;
+</code></pre><h2 id="case문으로-데이터-변환">[CASE문으로 데이터 변환]</h2>
+<p>간단한 처리의 경우 사용자 정의 함수를 작성하지 않고 CASE문으로 처리<br>
+a열이 NULL인 경우 0으로 처리하기</p>
+<pre tabindex="0"><code>mysql&gt; SELECT CASE WHEN a IS NULL THEN 0 ELSE a END AS &#39;a(null=0)&#39; FROM sample37;  
+</code></pre><p><strong>-COALESCE( &hellip; ) 함수</strong><br>
+주어진 파라미터들 중 가장 앞에 있는 NULL이 아닌 값을 반환<br>
+mysql&gt; SELECT COALESCE(a,0) FROM sample37; : a가 NULL인 경우 0이 반환됨</p>
+<p><strong>-검색 CASE</strong> : CASE WHEN 조건식 THEN 식</p>
+<pre tabindex="0"><code>mysql&gt; SELECT a &#34;코드&#34;,
+    -&gt; CASE
+    -&gt;  WHEN a=1 THEN &#34;남자&#34;
+    -&gt;  WHEN a=2 THEN &#34;여자&#34;
+    -&gt;  ELSE &#34;미지정&#34;
+    -&gt; END AS &#34;성별&#34; FROM sample37;
+=&gt; if-else와 비슷!
+</code></pre><p><strong>-단순 CASE</strong> : CASE 식1 WHEN 식2 THEN 식3</p>
+<pre tabindex="0"><code>mysql&gt; SELECT a AS &#34;코드&#34;,
+    -&gt; CASE a
+    -&gt; WHEN 1 THEN &#34;남자&#34;
+    -&gt; WHEN 2 THEN &#34;여자&#34;
+    -&gt; ELSE &#34;미지정&#34;
+    -&gt; END AS &#34;성별&#34; FROM sample37;
+=&gt; switch와 비슷!
++------+--------+
+| 코드 | 성별   |
++------+--------+
+|    1 | 남자   |
+|    2 | 여자   |
+| NULL | 미지정 |
++------+--------+
+</code></pre><p>-SELECT구 외 어디에나 CASE문 사용가능<br>
+-ELSE 생략시 ELSE NULL</p>
+<p>-단순 CASE에서 식에 NULL이 들어갈 경우 비교할 수 없음( WHEN NULL THEN ..)<br>
+=&gt; 검색 CASE문으로 WHEN a IS NULL THEN .. 을 사용하자</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_2/"
+      ><span class="mr-1.5">←</span><span>SQL 2</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_0/"
+      ><span>SQL 입문</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

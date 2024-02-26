@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on BumCode</title>
+    <link>https://bumcode.kr/writing/sql/</link>
+    <description>Recent content in SQL on BumCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Feb 2024 17:22:46 +0900</lastBuildDate><atom:link href="https://bumcode.kr/writing/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 2</title>
+      <link>https://bumcode.kr/writing/sql/sql_2/</link>
+      <pubDate>Mon, 26 Feb 2024 17:22:46 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/sql/sql_2/</guid>
+      <description>4장 데이터의 추가, 삭제, 갱신 데이터 : 클라이언트 =&amp;gt; 서버
+[행 추가하기] mysql&amp;gt; INSERT INTO 테이블명 VALUES( ....); -열 지정해서 행 추가하기
+mysql&amp;gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , ); -Defalut를 명시적으로 지정하기
+mysql&amp;gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저장: 지정하지 않은 열은 Default 값으로 저장됨
++ NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음
+[행 삭제하기] DELETE 열 삭제는 불가함
+mysql&amp;gt; DELETE FROM 테이블명 WHERE 조건식; mysql&amp;gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제</description>
+    </item>
+    
+    <item>
+      <title>SQL 1</title>
+      <link>https://bumcode.kr/writing/sql/sql_1/</link>
+      <pubDate>Mon, 19 Feb 2024 23:34:29 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/sql/sql_1/</guid>
+      <description>&amp;gt;show databases; : db목록을 보여줌 &amp;gt;use sample; : sample db를 선택함 &amp;gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&amp;gt; 테이블구조참조(describe) 테이블구조
+Field : 열이름
+Type : 열의 자료형
+-INTEGER 정수(소수점x)
+-CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
+-VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
+-DATE 연월일
+-TIME 시분초
+Null : Null값 허용여부
+Key : 해당열이 Key로 지정되어있는지.
+Default : 생략시 기본값.(NULL)
+&amp;gt;SELECT * FROM a; : a테이블의 *(모든)열. &amp;gt;SELECT name FROM a : a테이블의 이름 열 &amp;gt;SELECT 열1, 열2 .</description>
+    </item>
+    
+    <item>
+      <title>SQL 입문</title>
+      <link>https://bumcode.kr/writing/sql/sql_0/</link>
+      <pubDate>Sun, 18 Feb 2024 17:22:46 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/sql/sql_0/</guid>
+      <description>&amp;lsquo;SQL 첫걸음&amp;rsquo; 책으로 공부하며 작성한 메모장을 복붙해서 간단하게 정리 후 올리는 중입니다. 어느정도 기반이 잡힌 뒤 다시 정리하겠습니다.
+MySQL DBMS기반</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,422 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>SQL 2 - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="4장 데이터의 추가, 삭제, 갱신 데이터 : 클라이언트 =&gt; 서버
+[행 추가하기] mysql&gt; INSERT INTO 테이블명 VALUES( ....); -열 지정해서 행 추가하기
+mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , ); -Defalut를 명시적으로 지정하기
+mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저장: 지정하지 않은 열은 Default 값으로 저장됨
+&#43; NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음
+[행 삭제하기] DELETE 열 삭제는 불가함
+mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제" />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="SQL 2">
+<meta itemprop="description" content="4장 데이터의 추가, 삭제, 갱신 데이터 : 클라이언트 =&gt; 서버
+[행 추가하기] mysql&gt; INSERT INTO 테이블명 VALUES( ....); -열 지정해서 행 추가하기
+mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , ); -Defalut를 명시적으로 지정하기
+mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저장: 지정하지 않은 열은 Default 값으로 저장됨
+&#43; NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음
+[행 삭제하기] DELETE 열 삭제는 불가함
+mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제"><meta itemprop="datePublished" content="2024-02-26T17:22:46+09:00" />
+<meta itemprop="dateModified" content="2024-02-26T17:22:46+09:00" />
+<meta itemprop="wordCount" content="170">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="SQL 2" />
+<meta property="og:description" content="4장 데이터의 추가, 삭제, 갱신 데이터 : 클라이언트 =&gt; 서버
+[행 추가하기] mysql&gt; INSERT INTO 테이블명 VALUES( ....); -열 지정해서 행 추가하기
+mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , ); -Defalut를 명시적으로 지정하기
+mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저장: 지정하지 않은 열은 Default 값으로 저장됨
+&#43; NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음
+[행 삭제하기] DELETE 열 삭제는 불가함
+mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/writing/sql/sql_2/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2024-02-26T17:22:46+09:00" />
+<meta property="article:modified_time" content="2024-02-26T17:22:46+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL 2"/>
+<meta name="twitter:description" content="4장 데이터의 추가, 삭제, 갱신 데이터 : 클라이언트 =&gt; 서버
+[행 추가하기] mysql&gt; INSERT INTO 테이블명 VALUES( ....); -열 지정해서 행 추가하기
+mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , ); -Defalut를 명시적으로 지정하기
+mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저장: 지정하지 않은 열은 Default 값으로 저장됨
+&#43; NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음
+[행 삭제하기] DELETE 열 삭제는 불가함
+mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제"/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/writing/sql/sql_2/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">SQL 2</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 26, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h3 id="4장-데이터의-추가-삭제-갱신">4장 데이터의 추가, 삭제, 갱신</h3>
+<blockquote>
+<p>데이터 : 클라이언트 =&gt; 서버</p>
+</blockquote>
+<h2 id="행-추가하기">[행 추가하기]</h2>
+<pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명 VALUES( ....);  
+</code></pre><p><strong>-열 지정해서 행 추가하기</strong></p>
+<pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , );  
+</code></pre><p><strong>-Defalut를 명시적으로 지정하기</strong></p>
+<pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT);  
+</code></pre><p><strong>-암묵적으로 저장:</strong> 지정하지 않은 열은 Default 값으로 저장됨</p>
+<p>+ NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음</p>
+<h2 id="행-삭제하기">[행 삭제하기]</h2>
+<p>DELETE 열 삭제는 불가함</p>
+<pre tabindex="0"><code>mysql&gt; DELETE FROM 테이블명 WHERE 조건식;
+mysql&gt; DELETE FROM 테이블명;
+</code></pre><p>WHERE생략시 모든 행 삭제</p>
+<h2 id="데이터-갱신">[데이터 갱신]</h2>
+<pre tabindex="0"><code>mysql&gt; UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
+</code></pre><p>WHERE구 생략시 모든 행의 지정한 열이 갱신됨<br>
+WHERE 조건에 일치하는 모든 행 갱신</p>
+<p>SET 열명 = 값     =&gt; 여기서 =는 대입연산자</p>
+<pre tabindex="0"><code>mysql&gt; UPDATE sample41 SET a=&#39;update&#39; WHERE a IS NULL;
+</code></pre><p><strong>-SET구 실행순서</strong><br>
+실행순서는 제품마다 달라지는 것에 주의</p>
+<pre tabindex="0"><code>MySQL&gt; UPDATE sample41 SET no = no+1, a = no; 
+순서대로 no에는 no+1 대입, a에는 새로 갱신된 no가 대입
+</code></pre><pre tabindex="0"><code>Oracle&gt; UPDATE sample41 SET no = no+1, a = no;
+순서에 상관없이 a에는 갱신 이전의 no가 대입
+</code></pre><p><strong>-NULL로 갱신</strong><br>
+UPDATE sample41 SET a=NULL;<br>
+다만 NOT NULL제약시 불가</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_1/"
+      ><span>SQL 1</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

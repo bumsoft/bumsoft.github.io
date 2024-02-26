@@ -7,27 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/writing/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>sql입문기</title>
-      <link>https://bumcode.kr/writing/dir-sql/sql/</link>
-      <pubDate>Mon, 19 Feb 2024 23:34:29 +0900</pubDate>
-      
-      <guid>https://bumcode.kr/writing/dir-sql/sql/</guid>
-      <description>&amp;lsquo;SQL 첫걸음&amp;rsquo; 책으로 공부하며 작성한 메모장을 복붙한 글로
-어느정도 기반이 잡힌 뒤 정리하겠습니다.
-MySQL DBMS기반
-[2024.02.19]
-&amp;gt;show databases; : db목록을 보여줌 &amp;gt;use sample; : sample db를 선택함 &amp;gt;DESC sample21; : sample21의 테이블구조가 나옴(sql명령x) -&amp;gt; 테이블구조참조(describe) 테이블구조
-Field : 열이름
-Type : 열의 자료형
--INTEGER 정수(소수점x)
--CHAR 최대가 정해진 문자열로, 남는 공간은 공백으로 채움
--VARCHAR 최대가 정해진 문자열이나, 실제 문자열길이만큼만 저장
--DATE 연월일
--TIME 시분초
-Null : Null값 허용여부
-Key : 해당열이 Key로 지정되어있는지.</description>
-    </item>
-    
   </channel>
 </rss>
