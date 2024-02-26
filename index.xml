@@ -81,10 +81,10 @@ update():필요한 경우 트리 업데이트
     
     <item>
       <title>구조체</title>
-      <link>https://bumcode.kr/writing/c/struct/</link>
+      <link>https://bumcode.kr/writing/dir-c_lang/struct/</link>
       <pubDate>Wed, 06 Dec 2023 12:10:53 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/c/struct/</guid>
+      <guid>https://bumcode.kr/writing/dir-c_lang/struct/</guid>
       <description>클래스의 원시형태라고 할 수 있는 C언어의 구조체에 대해 알아보자.
 구조체는 사용자 정의 자료형이라 이해하면 된다.
 구조체의 정의 및 변수선언 구조체의 정의는 다음과 같다.
@@ -153,10 +153,10 @@ vertex[i]의 원소 :pair( i에서 갈 수 있는 다른 정점 , 그 정점까�
     
     <item>
       <title>C언어 포인터/배열</title>
-      <link>https://bumcode.kr/writing/c/pointer/</link>
+      <link>https://bumcode.kr/writing/dir-c_lang/pointer/</link>
       <pubDate>Wed, 08 Nov 2023 19:47:47 +0900</pubDate>
       
-      <guid>https://bumcode.kr/writing/c/pointer/</guid>
+      <guid>https://bumcode.kr/writing/dir-c_lang/pointer/</guid>
       <description>헷갈리기 쉬운 부분이니 확실하게 정리하고 넘어가는게 좋을 것 같다.
 배열과 포인터의 관계를 이해하기위해 알아야하는 것이 있다.
 arr[i] == *(arr+i) 이게 같은 표현이라는 것. 이걸 이용해 2차원 배열까지 포인터로 표현할 수가 있다.

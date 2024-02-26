@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dir-C lang on BumCode</title>
+    <title>C on BumCode</title>
     <link>https://bumcode.kr/writing/dir-c_lang/</link>
-    <description>Recent content in Dir-C lang on BumCode</description>
+    <description>Recent content in C on BumCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Dec 2023 12:10:53 +0900</lastBuildDate><atom:link href="https://bumcode.kr/writing/dir-c_lang/index.xml" rel="self" type="application/rss+xml" />
