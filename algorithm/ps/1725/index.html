@@ -38,7 +38,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg: #fbfbfb"
+  style="--bg: #faf8f1"
   lang="en-us"
 >
   <head>
@@ -226,7 +226,7 @@ update():필요한 경우 트리 업데이트
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
