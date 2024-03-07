@@ -65,7 +65,8 @@ Default : 생략시 기본값.(NULL)
       <pubDate>Sun, 18 Feb 2024 17:22:46 +0900</pubDate>
       
       <guid>https://bumcode.kr/writing/sql/sql_0/</guid>
-      <description>&amp;lsquo;SQL 첫걸음&amp;rsquo; 책으로 공부하며 작성한 메모장을 간단하게 정리 후 올리는 중입니다. 어느정도 기반이 잡힌 뒤 다시 정리하겠습니다.
+      <description>&amp;lsquo;SQL 첫걸음&amp;rsquo; 책으로 공부하며 작성한 메모장을 간단하게 정리 후 올린 글입니다.
+저의 참고용으로 올리는 것이기에 내용과 구성이 난잡할 수 있습니다.
 MySQL DBMS기반</description>
     </item>
     
