@@ -145,7 +145,7 @@ mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT); -암묵적으로 저�
 [행 삭제하기] DELETE 열 삭제는 불가함
 mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이블명; WHERE생략시 모든 행 삭제"><meta itemprop="datePublished" content="2024-02-26T17:22:46+09:00" />
 <meta itemprop="dateModified" content="2024-02-26T17:22:46+09:00" />
-<meta itemprop="wordCount" content="170">
+<meta itemprop="wordCount" content="928">
 <meta itemprop="keywords" content="" />
   
   <meta property="og:title" content="SQL 2" />
@@ -332,11 +332,12 @@ mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이
     
   </header>
 
-  <section><h3 id="4장-데이터의-추가-삭제-갱신">4장 데이터의 추가, 삭제, 갱신</h3>
+  <section><h2 id="4장-데이터의-추가-삭제-갱신">4장 데이터의 추가, 삭제, 갱신</h2>
 <blockquote>
 <p>데이터 : 클라이언트 =&gt; 서버</p>
 </blockquote>
-<h2 id="행-추가하기">[행 추가하기]</h2>
+</br>
+<h3 id="행-추가하기">[행 추가하기]</h3>
 <pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명 VALUES( ....);  
 </code></pre><p><strong>-열 지정해서 행 추가하기</strong></p>
 <pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명(열1이름,열2이름) VALUES( , );  
@@ -344,12 +345,12 @@ mysql&gt; DELETE FROM 테이블명 WHERE 조건식; mysql&gt; DELETE FROM 테이
 <pre tabindex="0"><code>mysql&gt; INSERT INTO 테이블명(a,b) VALUES(1,DEFAULT);  
 </code></pre><p><strong>-암묵적으로 저장:</strong> 지정하지 않은 열은 Default 값으로 저장됨</p>
 <p>+ NULL이 NO로 제약(NOT NULL)이 걸려있다면 VALUES에 NULL을 저장할 수 없음</p>
-<h2 id="행-삭제하기">[행 삭제하기]</h2>
+<h3 id="행-삭제하기">[행 삭제하기]</h3>
 <p>DELETE 열 삭제는 불가함</p>
 <pre tabindex="0"><code>mysql&gt; DELETE FROM 테이블명 WHERE 조건식;
 mysql&gt; DELETE FROM 테이블명;
 </code></pre><p>WHERE생략시 모든 행 삭제</p>
-<h2 id="데이터-갱신">[데이터 갱신]</h2>
+<h3 id="데이터-갱신">[데이터 갱신]</h3>
 <pre tabindex="0"><code>mysql&gt; UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
 </code></pre><p>WHERE구 생략시 모든 행의 지정한 열이 갱신됨<br>
 WHERE 조건에 일치하는 모든 행 갱신</p>
@@ -364,6 +365,176 @@ WHERE 조건에 일치하는 모든 행 갱신</p>
 </code></pre><p><strong>-NULL로 갱신</strong><br>
 UPDATE sample41 SET a=NULL;<br>
 다만 NOT NULL제약시 불가</p>
+<p>*UPDATE는 셀을 갱신하는 명령어</p>
+<h3 id="물리삭제와-논리삭제">[물리삭제와 논리삭제]</h3>
+<p><strong>-물리삭제</strong><br>
+DELETE 명령을 통해 데이터 삭제</p>
+<p><strong>-논리삭제</strong><br>
+UPDATE 명령을 통해 삭제플래그 값을 갱신, 실제 데이터는 삭제되지 않고 테이블에 남아있으며, 참조시 삭제플래그가 삭제로 설정된 행을 제외하는 SELECT명령 사용</p>
+</br>
+<h2 id="5장-집계와-서브쿼리">5장 집계와 서브쿼리</h2>
+</br>
+<h3 id="집계함수">[집계함수]</h3>
+<p>인수로 집합을 지정<br>
+<strong>집계 :</strong> 복수의 값(집합)에서 하나의 값을 계산하는 것<br>
+-COUNT<br>
+-SUM<br>
+-AVG<br>
+-MIN<br>
+-MAX</p>
+<pre tabindex="0"><code>mysql&gt; SELECT * FROM sample51;
++------+------+----------+
+| no   | name | quantity |
++------+------+----------+
+|    1 | A    |        1 |
+|    2 | A    |        2 |
+|    3 | B    |       10 |
+|    4 | C    |        3 |
+| NULL | NULL |     NULL |
++------+------+----------+
+</code></pre><h3 id="count">[COUNT]</h3>
+<p>인수로 주어진 집합의 &lsquo;개수&rsquo;를 반환</p>
+<pre tabindex="0"><code>mysql&gt; SELECT COUNT(*) FROM sample51;
++----------+
+| COUNT(*) |
++----------+
+|        5 |
++----------+
+sample51의 행의 개수 5
+</code></pre><p><strong>-열을 지정하는 경우</strong></p>
+<pre tabindex="0"><code>mysql&gt; SELECT COUNT(name) FROM sample51;  
+</code></pre><p>name이 NULL인 행은 제외되고 계산됨</p>
+<p>반면 COUNT(*)은 모든 열의 행수를 카운트하기에 NULL값이 무시되지 않음</p>
+<p><strong>-DISTINCT :</strong> 중복된 값을 제거(다른 집계함수에서도 사용가능)</p>
+<pre tabindex="0"><code>mysql&gt; SELECT ALL name FROM sample51;
+mysql&gt; SELECT DISTINCT name FROM sample51;
+생략시 ALL로 간주
+</code></pre><p>-DISTINCT를 이용해 <strong>중복되지 않는 데이터 개수</strong> 구하기
+집계함수의 인수로 DISTINCT사용</p>
+<pre tabindex="0"><code>mysql&gt; SELECT COUNT(DISTINCT name) FROM sample51;
+</code></pre><h3 id="sum">[SUM]</h3>
+<p>수치형 집합만 지정가능, NULL값 무시</p>
+<pre tabindex="0"><code>mysql&gt; SELECT SUM(quantity) FROM sample51;
++---------------+
+| SUM(quantity) |
++---------------+
+|            16 |
++---------------+
+</code></pre><h3 id="avg">[AVG]</h3>
+<pre tabindex="0"><code>mysql&gt; SELECT AVG(quantity) FROM sample51;
++---------------+
+| AVG(quantity) |
++---------------+
+|        4.0000 |
++---------------+
+</code></pre><p>-NULL을 0으로 계산하기</p>
+<pre tabindex="0"><code>mysql&gt; SELECT AVG(CASE WHEN quantity IS NULL THEN 0 ELSE quantity END) FROM sample51;
+</code></pre><h3 id="min-max">[MIN MAX]</h3>
+<p>문자열형,날짜시간형에도 사용가능
+NULL값 무시</p>
+<pre tabindex="0"><code>mysql&gt; SELECT MAX(quantity) FROM sample51;
++---------------+
+| MAX(quantity) |
++---------------+
+|            10 |
++---------------+
+1 row in set (0.01 sec)
+
+mysql&gt; SELECT MIN(quantity) FROM sample51;
++---------------+
+| MIN(quantity) |
++---------------+
+|             1 |
++---------------+
+mysql&gt; SELECT MIN(CASE WHEN quantity IS NULL THEN 0 ELSE quantity END) FROM sample51;
+</code></pre><br>
+<h3 id="그룹화">[그룹화]</h3>
+<p>집계함수의 활용범위를 넓힐 수 있음</p>
+<p>-GROUP BY구 : 지정된 열의 값이 같은 행이 하나의 그룹으로 묶임<br>
+지정하지 않은 열은 SELECT에서 사용X (집계함수와 사용은 가능)<br>
+GROUP BY는 그룹화된 각각의 그룹이 하나의 집합으로 집계함수의 인수로 넘겨짐</p>
+<pre tabindex="0"><code>+------+----------+
+| name | quantity |
++------+----------+
+| A    |        1 |
+| A    |        2 |
+| B    |       10 |
+| C    |        3 |
+| NULL |     NULL |
++------+----------+
+mysql&gt; SELECT name FROM sample51 GROUP BY name;
++------+
+| name |
++------+
+| A    |
+| B    |
+| C    |
+| NULL |
++------+
+
+집계함수와 사용
+mysql&gt; SELECT name,COUNT(name),SUM(quantity) FROM sample51 GROUP BY name;
++------+-------------+---------------+
+| name | COUNT(name) | SUM(quantity) |
++------+-------------+---------------+
+| A    |           2 |             3 |
+| B    |           1 |            10 |
+| C    |           1 |             3 |
+| NULL |           0 |          NULL |
++------+-------------+---------------+
+</code></pre><p><strong>-내부처리순서</strong><br>
+WHERE -&gt; GROUP BY -&gt; SELECT -&gt; ORDER BY</p>
+<p>때문에 다음과 같이 사용할 수 없다. =&gt; WHERE구에서 집계함수 사용 X</p>
+<pre tabindex="0"><code>mysql&gt; SELECT name, COUNT(name), SUM(quantity) FROM sample51 WHERE COUNT(name)=1 GROUP BY name;
+</code></pre><p><strong>-HAVING구</strong><br>
+WHERE구와 동일하게 조건식을 지정<br>
+조건식에는 집계된 열의 값이나 집계함수의 계산결과가 전달됨</p>
+<pre tabindex="0"><code>mysql&gt; SELECT name FROM sample51 GROUP BY name HAVING COUNT(name)&gt;1;
+</code></pre><h3 id="서브쿼리">[서브쿼리]</h3>
+<p>SELECT명령에 의한 데이터 질의로, 상부가 아닌 하부의 부수적인 질의를 의미</p>
+<p>mysql에서는 데이터를 추가하거나 갱신할 경우 동일한 테이블을 서브쿼리에서 사용할 수 없음</p>
+<h3 id="상관서브쿼리">[상관서브쿼리]</h3>
+<p><strong>-EXISTS(SELECT) :</strong> 반환된 행이 있다면 참, 없다면 거짓을 반환 =&gt; SELECT가 스칼라 값을 반환하지 않아도 됨</p>
+<pre tabindex="0"><code>mysql&gt; SELECT * FROM SAMPLE551 WHERE EXISTS(SELECT * FROM SAMPLE552 WHERE no2 = no);
+552.no2 = 551.no인 행을 반환
+
+mysql&gt; SELECT * FROM SAMPLE551 WHERE NOT EXISTS(SELECT * FROM SAMPLE552 WHERE no2 = no);
+552.no2 = 551.no가 아닌 행을 반환
+
+다음과 같이 SET구에서도 EXISTS와 CASE를 사용해 업데이트를 할 수 있음
+mysql&gt; UPDATE SAMPLE551 SET a = (CASE WHEN EXISTS(SELECT * FROM SAMPLE552 WHERE no2=no) THEN &#39;있음1&#39; ELSE &#39;없음1&#39; END);
+</code></pre><p>UPDATE명령(부모)과 서브쿼리(자식)처럼, 부모명령과 자식인 서브쿼리가 특정 관계를 맺는 것을 &lsquo;상관 서브쿼리&rsquo;라 부름</p>
+<p>두 테이블의 열이 같은 이름이라면(EX. board_id, board_id) 에러 혹은 같은 테이블의 열을 가리켜 항상 참이 됨.<br>
+이를 해결하기위해 열명 앞에 <strong>&lsquo;테이블명.&rsquo;</strong> 을 붙여주면 됨<br>
+table1.board_id = table2.board_id</p>
+<p>만약 열명이 같고 명시하지 않는다면, 가장 가까운 스코프에 있는 열로 인식하고 처리함<br>
+그렇기에 해당 쿼리의 열은 명시를 하지 않아도 상관은 없으나 가독성을 위해 명시하자!</p>
+<p><strong>-IN</strong><br>
+열명 IN(집합)<br>
+스칼라 값끼리 비교시 =를 사용했다면, 집합을 비교할 때는, IN으로 집합 안에 값이 존재하는 지 조사할 수 있다.</p>
+<pre tabindex="0"><code>테이블이 다음과 같을 때
+551
++------+-------+
+| no   | a     |
++------+-------+
+|    1 | 없음1 |
+|    2 | 없음1 |
+|    3 | 있음1 |
+|    4 | 없음1 |
+|    5 | 있음1 |
++------+-------+
+552
++------+
+| no2   | 
++------+
+|    3 | 
+|    5 | 
++------+
+mysql&gt; SELECT * FROM551 WHERE no IN(3,5);
+mysql&gt; SELECT * FROM551 WHERE no IN(SELECT no2 FROM 552);
+</code></pre><p>집합부분을 서브쿼리로 지정할 수도 있음</p>
+<p><strong>-NOT IN</strong></p>
+<p><strong>-IN과 NULL</strong></p>
 </section>
 
   
@@ -374,6 +545,12 @@ UPDATE sample41 SET a=NULL;<br>
   
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_3/"
+      ><span class="mr-1.5">←</span><span>SQL 3</span></a
+    >
     
     
     <a

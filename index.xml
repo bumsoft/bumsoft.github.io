@@ -8,6 +8,25 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SQL 3</title>
+      <link>https://bumcode.kr/writing/sql/sql_3/</link>
+      <pubDate>Thu, 07 Mar 2024 22:04:32 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/sql/sql_3/</guid>
+      <description>6장 데이터베이스 객체 작성과 삭제 [데이터베이스 객체] 데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &amp;hellip;)
+-이름을 가지며 중복 X
+-다른 종류의 객체와도 중복이 되면 안됨
+당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.
+[스키마] 객체가 담기는 그릇
+스키마가 다르면 이름이 같아도 괜찮음
+[SQL명령의 종류] DML (Data Manipulation Language) 데이터 조작
+SELECT INSERT UPDATE DELETE
+DDL (Data Definition Language) 데이터 정의
+CREATE DROP ALTER
+DCL (Data Control Language) 데이터 제어</description>
+    </item>
+    
+    <item>
       <title>SQL 2</title>
       <link>https://bumcode.kr/writing/sql/sql_2/</link>
       <pubDate>Mon, 26 Feb 2024 17:22:46 +0900</pubDate>

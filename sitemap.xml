@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bumcode.kr/writing/sql/</loc>
-    <lastmod>2024-02-26T17:22:46+09:00</lastmod>
+    <lastmod>2024-03-07T22:04:32+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/writing/sql/sql_3/</loc>
+    <lastmod>2024-03-07T22:04:32+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>

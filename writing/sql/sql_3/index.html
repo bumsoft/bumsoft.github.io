@@ -1,0 +1,512 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>SQL 3 - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="6장 데이터베이스 객체 작성과 삭제 [데이터베이스 객체] 데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &hellip;)
+-이름을 가지며 중복 X
+-다른 종류의 객체와도 중복이 되면 안됨
+당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.
+[스키마] 객체가 담기는 그릇
+스키마가 다르면 이름이 같아도 괜찮음
+[SQL명령의 종류] DML (Data Manipulation Language) 데이터 조작
+SELECT INSERT UPDATE DELETE
+DDL (Data Definition Language) 데이터 정의
+CREATE DROP ALTER
+DCL (Data Control Language) 데이터 제어" />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="SQL 3">
+<meta itemprop="description" content="6장 데이터베이스 객체 작성과 삭제 [데이터베이스 객체] 데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &hellip;)
+-이름을 가지며 중복 X
+-다른 종류의 객체와도 중복이 되면 안됨
+당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.
+[스키마] 객체가 담기는 그릇
+스키마가 다르면 이름이 같아도 괜찮음
+[SQL명령의 종류] DML (Data Manipulation Language) 데이터 조작
+SELECT INSERT UPDATE DELETE
+DDL (Data Definition Language) 데이터 정의
+CREATE DROP ALTER
+DCL (Data Control Language) 데이터 제어"><meta itemprop="datePublished" content="2024-03-07T22:04:32+09:00" />
+<meta itemprop="dateModified" content="2024-03-07T22:04:32+09:00" />
+<meta itemprop="wordCount" content="452">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="SQL 3" />
+<meta property="og:description" content="6장 데이터베이스 객체 작성과 삭제 [데이터베이스 객체] 데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &hellip;)
+-이름을 가지며 중복 X
+-다른 종류의 객체와도 중복이 되면 안됨
+당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.
+[스키마] 객체가 담기는 그릇
+스키마가 다르면 이름이 같아도 괜찮음
+[SQL명령의 종류] DML (Data Manipulation Language) 데이터 조작
+SELECT INSERT UPDATE DELETE
+DDL (Data Definition Language) 데이터 정의
+CREATE DROP ALTER
+DCL (Data Control Language) 데이터 제어" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/writing/sql/sql_3/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2024-03-07T22:04:32+09:00" />
+<meta property="article:modified_time" content="2024-03-07T22:04:32+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL 3"/>
+<meta name="twitter:description" content="6장 데이터베이스 객체 작성과 삭제 [데이터베이스 객체] 데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &hellip;)
+-이름을 가지며 중복 X
+-다른 종류의 객체와도 중복이 되면 안됨
+당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.
+[스키마] 객체가 담기는 그릇
+스키마가 다르면 이름이 같아도 괜찮음
+[SQL명령의 종류] DML (Data Manipulation Language) 데이터 조작
+SELECT INSERT UPDATE DELETE
+DDL (Data Definition Language) 데이터 정의
+CREATE DROP ALTER
+DCL (Data Control Language) 데이터 제어"/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/writing/sql/sql_3/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">SQL 3</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 7, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="6장-데이터베이스-객체-작성과-삭제">6장 데이터베이스 객체 작성과 삭제</h2>
+<br>
+<h3 id="데이터베이스-객체">[데이터베이스 객체]</h3>
+<p>데이터베이스 내 실체를 가지는 어떤 것. (테이블, 뷰, 인덱스 &hellip;)</p>
+<p>-이름을 가지며 중복 X<br>
+-다른 종류의 객체와도 중복이 되면 안됨</p>
+<p>당연한 말이지만, SELECT 등의 명령어는 데이터베이스 내 실체를 가지지 않기에 객체가 아니다.</p>
+<h3 id="스키마">[스키마]</h3>
+<p>객체가 담기는 그릇<br>
+스키마가 다르면 이름이 같아도 괜찮음</p>
+<h3 id="sql명령의-종류">[SQL명령의 종류]</h3>
+<ul>
+<li>
+<p><strong>DML</strong> (<strong>D</strong>ata <strong>M</strong>anipulation <strong>L</strong>anguage) 데이터 조작<br>
+SELECT INSERT UPDATE DELETE</p>
+</li>
+<li>
+<p><strong>DDL</strong> (<strong>D</strong>ata <strong>D</strong>efinition <strong>L</strong>anguage) 데이터 정의<br>
+CREATE DROP ALTER</p>
+</li>
+<li>
+<p><strong>DCL</strong> (<strong>D</strong>ata <strong>C</strong>ontrol <strong>L</strong>anguage) 데이터 제어</p>
+</li>
+</ul>
+<h3 id="테이블-작성">[테이블 작성]</h3>
+<p>CREATE TABLE 테이블명 ( (열 정의1) &hellip; )</p>
+<p>(열 정의1) : 열명 자료형 DEFAULT default값 NULL허용여부</p>
+<pre tabindex="0"><code>CREATE TABLE sample07(
+	no INTEGER NOT NULL,
+   	a VARCHAR(10),
+    b DATE
+);
+</code></pre><h3 id="테이블-삭제">[테이블 삭제]</h3>
+<p>DROP TABLE 테이블명;</p>
+<p>만약 모든 행을 삭제하고 싶다면?<br>
+<strong>DML인 DELETE</strong>로 행을 삭제시 처리속도가 늦어지기에<br>
+<strong>DDL인 TRUNCATE TABLE명령</strong>으로 모든 행을 삭제할 수 있음(테이블은 X)</p>
+<h3 id="테이블-변경">[테이블 변경]</h3>
+<p><strong>ALTER TABLE</strong><br>
+-열 추가,삭제,변경<br>
+-제약추가,삭제</p>
+<p><strong>-열 추가</strong><br>
+ALTER TABLE 테이블명 <strong>ADD</strong> (열 정의);</p>
+<p>열 추가시 기존에 존재하는 행의 추가된 열의 값은 NULL<br>
+DEFAULT를 지정했다면 그 값으로.</p>
+<p>NOT NULL제약을 걸었다면, NULL이 아닌 DEFAULT값을 지정해줘야한다.</p>
+<p><strong>-열 속성 변경</strong><br>
+ALTER TABLE 테이블명 <strong>MODIFY</strong> (열 정의);</p>
+<p>기존 행이 존재하는 경우, 속성 변경에 따라 데이터도 변환됨,<br>
+자료형 변환시 기존 데이터의 자료형도 변환<br>
+!변환과정에서 에러 발생시 ALTER TABLE명령은 실행X!</p>
+<p><strong>-열 이름 변경</strong><br>
+ALTER TABLE 테이블명 <strong>CHANGE</strong> 기존열이름 (신규열 정의);</p>
+<p><strong>-열 삭제</strong><br>
+ALTER TABLE 테이블명 <strong>DROP</strong> 열명;</p>
+<h3 id="제약">[제약]</h3>
+<p><strong>-열 제약</strong> : 열에 대해 정의하는 제약</p>
+<p><strong>-테이블 제약</strong> : 한 개의 제약으로 복수의 열에 제약</p>
+<p><strong>-제약에 이름 붙이기 CONSTRAINT</strong></p>
+<pre tabindex="0"><code>CONSTRAINT pkey_sample PRIMARY KEY(no, sub_no)  
+</code></pre><p>나중 관리를 위해 제약에 이름을 붙이는게 좋음.</p>
+<p><strong>-제약 추가</strong> : 열제약과 테이블 제약은 서로 다른 방법으로 추가한다.</p>
+<p><strong>-열 제약추가</strong></p>
+<pre tabindex="0"><code>ALTER TABLE test1 MODIFY a int NOT NULL;  
+</code></pre><p><strong>-테이블 제약추각</strong></p>
+<pre tabindex="0"><code>ALTER TABLE test1 ADD CONSTRAINT pkey_test1 PRIMARY KEY(a);  
+</code></pre><p><strong>-제약 삭제</strong></p>
+<ul>
+<li>열 제약</li>
+</ul>
+<pre tabindex="0"><code>ALTER TABLE test1 MODIFY a int;  
+</code></pre><ul>
+<li>테이블 제약</li>
+</ul>
+<pre tabindex="0"><code>ALTER TABLE test1 DROP CONSTRAINT pkey_test1;
+ALTER TABLE test1 DROP PRIMARY KEY;
+</code></pre><br>
+<h3 id="기본키">[기본키]</h3>
+<p><strong>-테이블의 행 한 개를 특정할 수 있는 검색키</strong> (검색키:검색할 때의 키워드)<br>
+-즉, 기본키로 설정된 열이 <strong>중복된 값을 가지는 것은 제약에 위반</strong>된다.</p>
+<pre tabindex="0"><code>CREATE TABLE sample(
+	p INTEGER NOT NULL,
+	a VARCHAR(30),
+	CONSTRAINT pkey_sample PRIMARY KEY(p)
+);
+</code></pre><p>sample테이블을 생성하고 열p를 sample 테이블의 기본키로 설정했다.</p>
+<blockquote>
+<p>!기본키로 저장할 열은 NOT NULL 제약이 있어야함!</p>
+</blockquote>
+<pre tabindex="0"><code>INSERT INTO sample VALUES(1,&#39;FIRST&#39;);  
+INSERT INTO sample VALUES(2,&#39;SECOND&#39;);  
+INSERT INTO sample VALUES(3,&#39;THIRD&#39;);  
+</code></pre><p>위와 같이 행을 추가 한 뒤, p열에 이미 있는 값인 행을 추가하거나, 이미 있는 값으로 수정할 경우 오류발생<br>
+=&gt; 유일한 값을 가짐. 다른 의미에서 &lsquo;유일성 제약&rsquo;이라 불리기도 함</p>
+<p>이는 고유제약(Unique Constraint)와 비슷한데, 고유제약은 NULL값을 허용하며, NULL값은 중복으로 취급하지 않는 차이가 있음.</p>
+<p><strong>-기본키를 구성하는 열은 복수도 가능함</strong><br>
+만약 a,b열을 기본키로 지정했고 테이블이 다음과 같다하자.</p>
+<pre tabindex="0"><code>a열	b열
+1	1
+1	2
+1	3
+2	1
+2	2
+2	3
+</code></pre><p>이 경우 a열의 값이 1 1 1, 2 2 2로 같더라도 b열의 값이 다르기에 제약에 위반되지 않는다.<br>
+그러나 (a,b):(1,1)을 추가한다면 제약에 위반되어 실행되지 않음</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_2/"
+      ><span>SQL 2</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
