@@ -1,0 +1,467 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>SQL 4 - BumCode</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="7장 복수의 테이블 다루기 [집합연산] 테이블의 한 행이 집합에서 원소 한 개임.
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦
+[UNION] 합집합
+SELECT명령 UNION SELECT명령; 각각의 SELECT명령의 열의 내용은 서로 일치해야함
+열 구성이 다른 테이블은 UNION X
+-ORDER BY로 정렬
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.
+UNION : 중복X
+UNION ALL : 중복O
+[교집합과 차집합] MySQL에서는 지원하지 않음
+교집합 : INTERSECT
+차집합 : EXCEPT MINUS(Oracle)" />
+  <meta name="author" content="신진범" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://bumcode.kr/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/140528690?v=4" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/github.svg" />
+  
+  <link rel="preload" as="image" href="https://bumcode.kr/instagram.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://bumcode.kr/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://bumcode.kr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://bumcode.kr/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EY5DXWZ2HZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-EY5DXWZ2HZ', { 'anonymize_ip': false });
+}
+</script>
+
+  
+  <meta itemprop="name" content="SQL 4">
+<meta itemprop="description" content="7장 복수의 테이블 다루기 [집합연산] 테이블의 한 행이 집합에서 원소 한 개임.
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦
+[UNION] 합집합
+SELECT명령 UNION SELECT명령; 각각의 SELECT명령의 열의 내용은 서로 일치해야함
+열 구성이 다른 테이블은 UNION X
+-ORDER BY로 정렬
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.
+UNION : 중복X
+UNION ALL : 중복O
+[교집합과 차집합] MySQL에서는 지원하지 않음
+교집합 : INTERSECT
+차집합 : EXCEPT MINUS(Oracle)"><meta itemprop="datePublished" content="2024-03-12T00:24:11+09:00" />
+<meta itemprop="dateModified" content="2024-03-12T00:24:11+09:00" />
+<meta itemprop="wordCount" content="269">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="SQL 4" />
+<meta property="og:description" content="7장 복수의 테이블 다루기 [집합연산] 테이블의 한 행이 집합에서 원소 한 개임.
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦
+[UNION] 합집합
+SELECT명령 UNION SELECT명령; 각각의 SELECT명령의 열의 내용은 서로 일치해야함
+열 구성이 다른 테이블은 UNION X
+-ORDER BY로 정렬
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.
+UNION : 중복X
+UNION ALL : 중복O
+[교집합과 차집합] MySQL에서는 지원하지 않음
+교집합 : INTERSECT
+차집합 : EXCEPT MINUS(Oracle)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bumcode.kr/writing/sql/sql_4/" /><meta property="article:section" content="writing" />
+<meta property="article:published_time" content="2024-03-12T00:24:11+09:00" />
+<meta property="article:modified_time" content="2024-03-12T00:24:11+09:00" />
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL 4"/>
+<meta name="twitter:description" content="7장 복수의 테이블 다루기 [집합연산] 테이블의 한 행이 집합에서 원소 한 개임.
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦
+[UNION] 합집합
+SELECT명령 UNION SELECT명령; 각각의 SELECT명령의 열의 내용은 서로 일치해야함
+열 구성이 다른 테이블은 UNION X
+-ORDER BY로 정렬
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.
+UNION : 중복X
+UNION ALL : 중복O
+[교집합과 차집합] MySQL에서는 지원하지 않음
+교집합 : INTERSECT
+차집합 : EXCEPT MINUS(Oracle)"/>
+
+  
+  
+  
+  <link rel="canonical" href="https://bumcode.kr/writing/sql/sql_4/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://bumcode.kr"
+      >BumCode</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/writing/"
+        >Writing</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/algorithm/"
+        >Algorithm</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/project/"
+        >Project</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/bumsoft"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/wlsbum"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">SQL 4</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Mar 12, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="7장-복수의-테이블-다루기">7장 복수의 테이블 다루기</h2>
+<br>
+<h3 id="집합연산">[집합연산]</h3>
+<p>테이블의 한 행이 집합에서 원소 한 개임.<br>
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦</p>
+<h3 id="union">[UNION]</h3>
+<p>합집합</p>
+<pre tabindex="0"><code>SELECT명령 UNION SELECT명령;
+</code></pre><p>각각의 SELECT명령의 열의 내용은 서로 일치해야함<br>
+열 구성이 다른 테이블은 UNION X</p>
+<p><strong>-ORDER BY로 정렬</strong><br>
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함<br>
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.</p>
+<p>UNION : 중복X<br>
+UNION ALL : 중복O</p>
+<h3 id="교집합과-차집합">[교집합과 차집합]</h3>
+<p>MySQL에서는 지원하지 않음<br>
+교집합 : INTERSECT<br>
+차집합 : EXCEPT MINUS(Oracle)</p>
+<h3 id="테이블-결합">[테이블 결합]</h3>
+<p>결합에서는 가로(열) 방향으로 데이터가 늘어남</p>
+<p><strong>-곱집합</strong><br>
+A={1,2,3}, B={a,b}라고할 때<br>
+A와 B의 곱집합 : {(1,a),(1,b),(2,a),(2,b),(3,a),(3,b)}</p>
+<p><strong>-교차결합(Cross Join)</strong><br>
+FROM구에 복수의 테이블 지정 시 교차결합</p>
+<pre tabindex="0"><code>곱집합으로 계산됨
+SELECT * FROM 테이블1, 테이블2;
+</code></pre><p>2개 이상의 테이블도 교차결합이 가능하지만 테이블 수가 많아지면 조합 수가 늘어 집합이 거대해짐</p>
+<p><strong>-내부결합 :</strong> 교차결합으로 계산된 곱집합에서 원하는 조합을 검색하는 것.</p>
+<pre tabindex="0"><code>SELECT * FROM 상품 AS A, 재고수 AS B WHERE A.상품코드 = B.상품코드 AND A.상품분류 = &#34;식료품&#34;;
+</code></pre><p><strong>-INNER JOIN으로 내부결합</strong></p>
+<pre tabindex="0"><code>SELECT * FROM 상품 AS A INNER JOIN 재고수 AS B ON A.상품코드=B.상품코드 WHERE A.상품분류 = &#34;식료품&#34;;
+</code></pre><p>ON을 사용해 결합조건 지정</p>
+<p><strong>-외부키 :</strong></p>
+<ul>
+<li>다른 테이블의 기본키를 참조하는 열</li>
+</ul>
+<p><strong>-자기결합(Self Join) :</strong></p>
+<ul>
+<li>테이블에 별명을 붙이는 기능을 이용해 같은 테이블끼리 결합하는 것.<br>
+사용할 일은 거의 없으나 자기 자신의 기본키를 참조하는 열을 자기 자신이 가지는 데이터 구조일 경우 사용됨</li>
+</ul>
+<p><strong>-외부결합 :</strong></p>
+<ul>
+<li>어느 한 쪽에만 존재하는 데이터행을 어떻게 다룰지.</li>
+</ul>
+<p>ex) 상품 테이블과 재고 테이블이 있을 때, 상품 테이블에 새로운 상품을 추가하여 재고 테이블에는 해당하는 상품 행이 없을 경우<br>
+위와 같은 경우 내부결합의 결과에서 새로운 상품은 제외됨</p>
+<p><strong>LEFT JOIN</strong> 또는 <strong>RIGHT JOIN</strong>을 통해 기준으로 삼을 테이블을 지정할 수 있음</p>
+<p>위와 같은 상황에서</p>
+<pre tabindex="0"><code>상품 LEFT JOIN 재고 ...
+</code></pre><p>와 같이 할 경우, JOIN의 왼쪽인 상품테이블이 기준이 되어 새로운 상품도 표시할 수 있다.</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://bumcode.kr/writing/sql/sql_3/"
+      ><span>SQL 3</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://bumcode.kr">BumCode</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

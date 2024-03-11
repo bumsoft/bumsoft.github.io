@@ -8,6 +8,27 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>SQL 4</title>
+      <link>https://bumcode.kr/writing/sql/sql_4/</link>
+      <pubDate>Tue, 12 Mar 2024 00:24:11 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/sql/sql_4/</guid>
+      <description>7장 복수의 테이블 다루기 [집합연산] 테이블의 한 행이 집합에서 원소 한 개임.
+테이블의 집합연산에서는 세로(행) 방향으로 데이터가 늘거나 줄어듦
+[UNION] 합집합
+SELECT명령 UNION SELECT명령; 각각의 SELECT명령의 열의 내용은 서로 일치해야함
+열 구성이 다른 테이블은 UNION X
+-ORDER BY로 정렬
+가장 마지막 SELECT명령에 ORDER BY를 지정해야함
+지정하는 열은 SELECT명령에서 별명을 통해 일치시켜야함.
+UNION : 중복X
+UNION ALL : 중복O
+[교집합과 차집합] MySQL에서는 지원하지 않음
+교집합 : INTERSECT
+차집합 : EXCEPT MINUS(Oracle)</description>
+    </item>
+    
+    <item>
       <title>SQL 3</title>
       <link>https://bumcode.kr/writing/sql/sql_3/</link>
       <pubDate>Thu, 07 Mar 2024 22:04:32 +0900</pubDate>
