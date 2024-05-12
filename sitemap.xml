@@ -97,12 +97,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/project/</loc>
-    <lastmod>2023-11-07T20:51:50+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://bumcode.kr/project/dir-game/project_game/</loc>
+    <loc>https://bumcode.kr/project/project_game/</loc>
     <lastmod>2023-11-07T20:51:50+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -137,7 +132,7 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://bumcode.kr/project/dir-game/</loc>
+    <loc>https://bumcode.kr/project/</loc>
     <lastmod>2023-11-01T00:00:50+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

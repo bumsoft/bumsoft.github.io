@@ -206,11 +206,11 @@ int arr1[3] = { 1,2,3 };int* ptr1 = arr1;cout &amp;lt;&amp;lt; ptr1[1] &amp;lt
     </item>
     
     <item>
-      <title>자바 swing</title>
-      <link>https://bumcode.kr/project/dir-game/project_game/</link>
+      <title>자바로 게임만들기</title>
+      <link>https://bumcode.kr/project/project_game/</link>
       <pubDate>Tue, 07 Nov 2023 20:51:50 +0900</pubDate>
       
-      <guid>https://bumcode.kr/project/dir-game/project_game/</guid>
+      <guid>https://bumcode.kr/project/project_game/</guid>
       <description>(사진 클릭 시 유튜브로 연결!)
 과제 연습삼아 틀만 만들어보려 시작했는데 생각보다 재미있어서 금방 만들었다.
 총알과 공은 벡터를 이용해 추적하고 삭제하는 방식인데 아직 OOP로 프로그램을 만들어본 경험이 거의 없어 코드가 약간 스파게티코드라&amp;hellip; 조만간 제대로된 MVC구조로 다시 설계할 예정이다.
@@ -218,7 +218,9 @@ int arr1[3] = { 1,2,3 };int* ptr1 = arr1;cout &amp;lt;&amp;lt; ptr1[1] &amp;lt
 구조도이다. 거의 완성했고 코드는 나중에 깃헙에 올릴 생각이다.
 메뉴, 랭킹, 아이템 등의 기능을 추가했다.
 2024/01/08
-계절학기가 곧 끝나서 끝나고 올려야겠다..ㅎ 과제는 만점을 받았다^_^</description>
+계절학기가 곧 끝나서 끝나고 올려야겠다..ㅎ 과제는 만점을 받았다^_^
+https://github.com/bumsoft/java_project
+객체지향에 대해 어느정도 이해한 뒤 2학년인 지금 다시 보니 얼마나 이게 얼마나 엉망인지 나 자신을 돌아보게되었다.</description>
     </item>
     
     <item>
