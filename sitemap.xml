@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bumcode.kr/writing/static-web/</loc>
+    <lastmod>2024-08-07T00:19:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://bumcode.kr/writing/static-web/gpt_static/</loc>
+    <lastmod>2024-08-07T00:19:00+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://bumcode.kr/writing/sql/</loc>
     <lastmod>2024-03-12T00:24:11+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -123,11 +133,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://bumcode.kr/writing/static-web/markdown/</loc>
-    <lastmod>2023-11-04T19:00:00+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://bumcode.kr/writing/static-web/</loc>
     <lastmod>2023-11-04T19:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
