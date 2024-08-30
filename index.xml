@@ -9,6 +9,18 @@
     <lastBuildDate>Sun, 05 Nov 2023 14:48:08 +0900</lastBuildDate><atom:link href="https://bumcode.kr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>24년 여름방학</title>
+      <link>https://bumcode.kr/writing/writings/summer24/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0900</pubDate>
+      
+      <guid>https://bumcode.kr/writing/writings/summer24/</guid>
+      <description>이번 여름방학때는 백엔드에 집중했었습니다. 처음에는 기본적인 흐름을 숙달하기 위해 CRUD게시판을 여러번 만들어보면서 스프링에 어느정도 익숙해졌고, 시큐리티 적용과 api호출 등 점차 기능을 추가해보았습니다.
+곧 개강을 앞둔 이 시점에서, 여름방학 때 진행한 프로젝트들에서 사용했던 기술과 어떻게 사용했는지를 정리해보려고 합니다.
+먼저 사용했던 기술스택입니다.
+1. Backend Java Spring Boot Spring MVC Spring Data JPA Spring Security Validation 2. Frontend Thymeleaf HTML/CSS/JavaScript Thymeleaf Extras Spring Security 3. Database MySQL JPA/Hibernate 4. Build Tools Gradle 5. Testing JUnit Mockito 6.</description>
+    </item>
+    
+    <item>
+      <title>Java Spring</title>
       <link>https://bumcode.kr/project/summer_24/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0900</pubDate>
       
